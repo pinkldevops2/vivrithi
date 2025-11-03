@@ -260,9 +260,6 @@ body{
 .author_data{
     border-left: dashed 1px #F58220;
 }
-.swiper-slide.swiper-slide-active{
-
-}
 .contact_cta{
   overflow: hidden;
   position: relative;
@@ -355,7 +352,6 @@ body{
     height: 100%;
     z-index: 1; 
     pointer-events: none; 
-    
     background: linear-gradient(
         45deg,
         rgba(255, 255, 255, 0) 0%,   
@@ -435,32 +431,3 @@ body{
         gap:10px;
       }
     }
-    @media (max-width: 650px) {
-      .image-wrapper {
-        width: calc(100% - 10px);
-      } 
-      .image-wrapper::before {
-        bottom: -10px;
-        right: -10px;
-      } 
-      .tab, .tab2{
-        display:none;
-      }
-      .tab-active, .tab-active2{
-        display:block;
-      }  
-      .tab-title-hold{
-        justify-content: center;
-      }
-      .arrow-holder{
-        width: calc(100% - 40px);
-        justify-content: space-between;
-        top:-85px;
-      }
-      #prev, #next, #prev2, #next2{
-        transform:rotate(-90deg);
-      }
-      .tab-title-hold{
-        margin-top:15px;
-      }
-    }
