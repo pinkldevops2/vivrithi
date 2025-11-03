@@ -1,0 +1,299 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+/* global.css */
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+}
+
+body{
+  font-size: 17px;
+}
+
+.contact_cta{
+    background: #3BBAE2;
+    background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(0, 1, 138, 1) 100%);
+    letter-spacing:1px;
+    position: relative;
+    z-index: 2;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00018A, #3BBAE2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text2 {
+  background: linear-gradient(90deg, #ffffff, #3BBAE2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.milestones .slick-dots {
+    display: flex!important;
+    width: 100%!important;
+    gap: 6px!important;
+    bottom: -20px!important;
+}
+.milestones .slick-dots li {
+    flex: 1!important;
+    width: 100%!important;
+    height: 3px!important;
+    margin: 0!important;
+}
+.milestones .slick-dots li button{
+    display: block!important;
+    width: 100%!important;
+    height: 3px!important;
+    background: #D4D4D4!important;
+    padding: 1px!important;
+}
+.milestones .slick-dots li button::before{
+  display: none;
+}
+.milestones .slick-dots li.slick-active button{
+  background: #666666!important;
+}
+.border-right-0{
+  border-right: 0px!important;
+}
+.border-bottom-0{
+  border-bottom: 0px!important;
+}
+.left-padding-zero{
+  padding-left: 0px!important;
+}
+/*banner*/
+    :root {
+      --speed: 500ms;
+      --gap: 1rem;
+      --width: 220px;
+    }
+
+    .item {
+      transition:
+        left var(--speed),
+        width var(--speed),
+        height var(--speed),
+        border-radius var(--speed),
+        opacity var(--speed);
+      transition-timing-function: ease-out;
+      transform-origin: center;
+      will-change: transform, opacity;
+    }
+
+    .item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      box-shadow: 0px 0px 50px 25px rgba(0, 0, 0, 0.25) inset;
+      transition: box-shadow var(--speed);
+    }
+
+    .item:nth-child(1),
+    .item:nth-child(2) {
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      opacity: 1;
+      filter: blur(0);
+    }
+
+    .item:nth-child(1)::after,
+    .item:nth-child(2)::after {
+      box-shadow: 0px -50px 150px 50px rgba(0, 0, 0, 0.75) inset;
+    }
+
+    .item:nth-child(3) {
+      left: 60%;
+    }
+
+    .item:nth-child(4) {
+      left: calc(60% + var(--width) + var(--gap));
+      transition-delay: calc(var(--speed) * 0.2);
+    }
+
+    .item:nth-child(5) {
+      left: calc(60% + calc(var(--width) * 2) + calc(var(--gap) * 2));
+      transition-delay: calc(var(--speed) * 0.4);
+    }
+
+    .item:nth-child(n + 6) {
+      opacity: 0;
+      transition-delay: calc(var(--speed) * 0.6);
+    }
+
+    .item.active .content .title,
+    .item.active-next .content .title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 30px;
+      text-transform: none;
+    }
+
+    .item.active .content,
+    .item.active-next .content {
+      animation: show var(--speed) ease-in-out calc(var(--speed) / 2) forwards;
+      bottom: 60px;
+    }
+
+    @keyframes show {
+      0% {
+        filter: blur(10px);
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .item {
+        --width: 130px;
+      }
+    }
+
+    @media (min-width: 650px) and (max-width: 900px) {
+      .item {
+        --width: 160px;
+      }
+    }
+
+    /*Banner*/
+
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .tab-active,  .tab-active2 {
+      background: linear-gradient(91.78deg, #00018a 7.87%, #3bbae2 99.27%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 35px !important;
+    }
+
+    /* Orange dashed separator */
+    .orange-dashed {
+      border-left: 2px dashed #f58220;
+      height: calc(100% + 30px);
+    }
+
+    /* Image background block before element */
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 842px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .image-wrapper.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .image-wrapper::before {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 100%;
+      height: 100%;
+      background-color: #d4d4d4;
+      z-index: 0;
+    }
+
+    .image-wrapper img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 842px;
+      height: 365px;
+      object-fit: cover;
+    }
+
+    /* Arrow buttons */
+    #prev, #next {
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    #prev:disabled, #next:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .tab {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+        .image-wrapper {
+            width: 100%;
+        }
+        .image-wrapper img{
+            width: 100%;
+            height:auto;
+        }
+    }
+.testimonials .swiper-slide {
+    border: dashed 1px #F58220;
+    padding: 30px 20px 30px 50px;
+    margin-right: -1px!important;
+}
+.author_data{
+    border-left: dashed 1px #F58220;
+}
+.swiper-slide.swiper-slide-active{
+
+}
+.contact_cta{
+  overflow: hidden;
+}
+.contact_cta span, .contact_cta img{
+  z-index: 5;
+}
+.contact_cta:hover{
+  color: #fff;
+}
+.contact_cta:hover::before{
+  z-index: 0;
+  content: '';
+  background: #3BBAE2;
+  background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(242, 114, 140, 1) 50%, rgba(245, 130, 32, 1) 100%);
+  width:400px;
+  height: 200px;
+  border-radius: 0px;
+}
+.contact_cta::before{
+  z-index: 0;
+  position:absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  top:0;
+  content: '';
+  background: #3BBAE2;
+  background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(242, 114, 140, 1) 50%, rgba(245, 130, 32, 1) 100%);
+  width:0px;
+  height: 0px;
+  border-radius: 100%;
+  transition: all ease-in 0.3s;
+}
+/*
+Ajith
+*/
