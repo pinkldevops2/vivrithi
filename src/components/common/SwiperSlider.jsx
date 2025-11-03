@@ -13,10 +13,10 @@ export default function SwiperSlider({ slides }) {
   return (
     <div className="relative w-full textimonials">
       
-<div class="container mx-auto flex justify-between pb-8">
+<div class="container mx-auto flex justify-between pb-8 flex-col md:flex-row px-4">
 			<h2 class="text-[35px] md:text-4xl font-heading leading-[120%] gradient-text">
       Trusted by emerging<br/>market leaders</h2>
-      <div className="w-[40%] flex items-end">
+      <div className="w-[40%] flex items-end hidden md:flex">
           <h2 className="text-[35px] md:text-4xl font-heading leading-[35px] gradient-text">{currentSlide}</h2> / <span className="text-gray-700 font-medium ">{slides.length}</span>
         </div>
       {/* Navigation & Counter */}
@@ -46,7 +46,7 @@ export default function SwiperSlider({ slides }) {
       {/* Swiper Carousel */}
       <Swiper
         modules={[Navigation]}
-        spaceBetween={20}
+        spaceBetween={0}
         slidesPerView={2.5}
         loop={true}
         onSwiper={(swiper) => (swiperRef.current = swiper)}

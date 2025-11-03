@@ -255,7 +255,6 @@ body{
 .testimonials .swiper-slide {
     border: dashed 1px #F58220;
     padding: 30px 20px 30px 50px;
-    margin-right: -1px!important;
 }
 .author_data{
     border-left: dashed 1px #F58220;
