@@ -13,15 +13,17 @@
 }
 
 body{
-  font-size: 17px;
+  font-size: 18px;
+  color:#1B1B1B;
+  line-height:24px;
 }
-
+.container{
+  max-width:1280px;
+}
 .contact_cta{
     background: #3BBAE2;
     background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(0, 1, 138, 1) 100%);
     letter-spacing:1px;
-    position: relative;
-    z-index: 2;
 }
 
 .gradient-text {
@@ -132,8 +134,8 @@ body{
       transition-delay: calc(var(--speed) * 0.6);
     }
 
-    .item.active .content .title,
-    .item.active-next .content .title {
+    .item.active .slider-content .title,
+    .item.active-next .slider-content .title {
       font-family: "Poppins", sans-serif;
       font-weight: 700;
       font-size: 28px;
@@ -141,8 +143,8 @@ body{
       text-transform: none;
     }
 
-    .item.active .content,
-    .item.active-next .content {
+    .item.active .slider-content,
+    .item.active-next .slider-content {
       animation: show var(--speed) ease-in-out calc(var(--speed) / 2) forwards;
       bottom: 60px;
     }
@@ -227,12 +229,12 @@ body{
     }
 
     /* Arrow buttons */
-    #prev, #next {
+    #prev, #next, #next2, #prev2 {
       cursor: pointer;
       transition: opacity 0.3s;
     }
 
-    #prev:disabled, #next:disabled {
+    #prev:disabled, #next:disabled, #prev2:disabled, #next2:disabled {
       opacity: 0.3;
       cursor: not-allowed;
     }
@@ -263,6 +265,7 @@ body{
 }
 .contact_cta{
   overflow: hidden;
+  position: relative;
 }
 .contact_cta span, .contact_cta img{
   z-index: 5;
@@ -271,16 +274,14 @@ body{
   color: #fff;
 }
 .contact_cta:hover::before{
-  z-index: 0;
+  z-index: 1;
   content: '';
-  background: #3BBAE2;
-  background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(242, 114, 140, 1) 50%, rgba(245, 130, 32, 1) 100%);
   width:400px;
   height: 200px;
   border-radius: 0px;
 }
 .contact_cta::before{
-  z-index: 0;
+   z-index: 1;
   position:absolute;
   left: 50%;
   top:50%;
@@ -288,12 +289,9 @@ body{
   top:0;
   content: '';
   background: #3BBAE2;
-  background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(242, 114, 140, 1) 50%, rgba(245, 130, 32, 1) 100%);
+  background: linear-gradient(32deg, rgb(59 115 226) 0%, rgb(211 70 98) 50%, rgb(204 96 4) 100%);
   width:0px;
   height: 0px;
   border-radius: 100%;
   transition: all ease-in 0.3s;
 }
-/*
-Ajith
-*/

@@ -13,7 +13,7 @@ export default function SwiperSlider({ slides }) {
     <div className="relative w-full">
       
 <div class="container mx-auto px-4 pt-[50px] flex justify-between">
-			<h2 class="text-[35px] md:text-4xl font-heading leading-snug mb-4 gradient-text">
+			<h2 class="text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text">
       Trusted by emerging<br/>market leaders</h2>
       {/* Navigation & Counter */}
       <div className="flex justify-center items-center gap-6 mt-8">        
