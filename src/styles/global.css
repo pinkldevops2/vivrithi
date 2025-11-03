@@ -295,3 +295,172 @@ body{
   border-radius: 100%;
   transition: all ease-in 0.3s;
 }
+.contact_cta img{
+  transition: all ease-in 0.3s;
+}
+.contact_cta:hover img{
+  margin-left: 7px;
+  margin-right: -7px;
+  transform: scale(1.1);
+}
+.contact_cta span{
+    display: block;
+    position: relative;
+    color: transparent;
+    overflow: hidden;
+}
+.contact_cta span::after {
+    display: block;
+    content: attr(data-text);
+    position: absolute;
+    top: -26px;
+    color: #fff!important;
+    transition: all ease-in 0.3s;
+}
+.contact_cta span::before {
+    display: block;
+    content: attr(data-text);
+    position: absolute;
+    top: 0px;
+    color: #fff!important;
+    transition: all ease-in 0.3s;
+}
+.contact_cta:hover span::after {
+    top: 0px;
+}
+.contact_cta:hover span::before {
+    top: 26px;
+}
+.image-flash-container {
+    position: relative;
+    overflow: hidden; 
+    display: inline-block;
+    cursor: pointer;
+}
+
+.image-flash-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-flash-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 60%; 
+    height: 100%;
+    z-index: 1; 
+    pointer-events: none; 
+    
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 0%,   
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%  
+    );
+    filter: blur(25px); /* Soften the edges */
+    transition: transform 0.4s ease-out; 
+    transform: skewX(-20deg) translateX(0);
+}
+
+.image-flash-container:hover::before {
+    transform: translateX(260%) skewX(-20deg); 
+}
+
+.image-flash-container:hover img {
+    transform: scale(1.03); 
+}
+.textimonials .swiper-slide-next{
+  background-color: #9797970f!important;
+}
+.textimonials .swiper-slide .logo_in_texti{
+  display: none;
+}
+.textimonials .swiper-slide-next .logo_in_texti{
+  display: block;
+}
+.swiper-button-next-custom svg, .swiper-button-prev-custom svg{
+  transition: all ease-in 0.4s;
+  cursor: pointer;
+}
+.swiper-button-next-custom:hover svg path, .swiper-button-prev-custom:hover svg path{
+  fill:#00018A;
+}
+.swiper-button-next-custom:hover svg, .swiper-button-prev-custom:hover svg{
+  transform: scale(1.2);
+}
+@media (max-width: 991px) {
+  h2 br{
+    display: none;
+  }
+}
+@media (max-width: 551px) {
+  .left_dashed_board{
+    border: none!important;
+  }
+}
+
+
+/* Revathi */
+@media (min-width: 1024px) and (max-width: 1280px) {
+      .container{
+        max-width:100%;
+      }
+      .image-wrapper, .image-wrapper img{
+        width: 575px;
+      }
+    }
+    @media (max-width: 900px) and (min-width: 768px) {
+      .container{
+        max-width:100%;
+      }
+      .image-wrapper, .image-wrapper img{
+        width: 380px;
+      }
+    }
+    @media (max-width: 768px) and (min-width: 650px) {
+      .tab-content-hold{
+        margin-left:75px;
+      }
+      .orange-dashed{
+        left:190px;
+      }
+      .tab-title-hold{
+        margin-top:0px;
+        margin-bottom:20px;
+        gap:10px;
+      }
+    }
+    @media (max-width: 650px) {
+      .image-wrapper {
+        width: calc(100% - 10px);
+      } 
+      .image-wrapper::before {
+        bottom: -10px;
+        right: -10px;
+      } 
+      .tab, .tab2{
+        display:none;
+      }
+      .tab-active, .tab-active2{
+        display:block;
+      }  
+      .tab-title-hold{
+        justify-content: center;
+      }
+      .arrow-holder{
+        width: calc(100% - 40px);
+        justify-content: space-between;
+        top:-85px;
+      }
+      #prev, #next, #prev2, #next2{
+        transform:rotate(-90deg);
+      }
+      .tab-title-hold{
+        margin-top:15px;
+      }
+    }

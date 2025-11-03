@@ -4,22 +4,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import LogoShape from '../../../public/Vivrithi_logo.svg';
 
 export default function SwiperSlider({ slides }) {
   const swiperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(1);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full textimonials">
       
-<div class="container mx-auto px-4 pt-[50px] flex justify-between">
-			<h2 class="text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text">
+<div class="container mx-auto flex justify-between pb-8">
+			<h2 class="text-[35px] md:text-4xl font-heading leading-[120%] gradient-text">
       Trusted by emerging<br/>market leaders</h2>
+      <div className="w-[40%] flex items-end">
+          <h2 className="text-[35px] md:text-4xl font-heading leading-[35px] gradient-text">{currentSlide}</h2> / <span className="text-gray-700 font-medium ">{slides.length}</span>
+        </div>
       {/* Navigation & Counter */}
       <div className="flex justify-center items-center gap-6 mt-8">        
-        <div className="text-gray-700 font-medium">
-          {currentSlide} / {slides.length}
-        </div>
+        
         <button
           className="swiper-button-prev-custom transition"
           aria-label="Previous Slide"
@@ -47,7 +49,6 @@ export default function SwiperSlider({ slides }) {
         spaceBetween={20}
         slidesPerView={2.5}
         loop={true}
-        centeredSlides={true}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex + 1)}
         navigation={{
@@ -63,6 +64,7 @@ export default function SwiperSlider({ slides }) {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
           <div className="relative">
+            <img src={LogoShape.src} alt="Vivrithi" class="w-12 h-12 absolute right-5 top-0 logo_in_texti" />
             <div class="quote_icon mb-[25px]">
           <svg width="42" height="29" viewBox="0 0 42 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M31.7812 11.3518C31.5245 11.3518 31.2678 11.3518 31.0111 11.4C31.4724 7.26789 32.8602 3.41953 35.0161 1.83963e-07C27.6738 3.89462 22.6943 11.1625 22.4899 19.5235V19.9985C22.4899 24.7485 26.6494 28.5969 31.7837 28.5969C36.9158 28.5487 41.0754 24.7005 41.0754 19.9505C41.0754 15.2005 36.9155 11.3518 31.7812 11.3518Z" fill="black"/>

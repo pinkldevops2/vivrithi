@@ -1,11 +1,12 @@
 ---
 import LogoShape from '../../../public/Vivrithi_logo.svg';
 ---
-<div class="bg-[#F8F8F8]"><div class="container mx-auto px-4 py-[50px]">
-  <div class="flex flex-wrap -mx-2">
-    <div class="w-full md:w-1/2 px-2 flex items-center">
+<div class="bg-[#F8F8F8] w-full xl:px-0 md:px-[40px] md:py-[70px] py-[40px] px-[20px]">
+  <div class="container mx-auto">
+  <div class="flex flex-wrap">
+    <div class="w-full lg:w-1/2 flex items-center lg:pr-[40px]">
       <!-- Column 1 content -->
-      <div class="p-4">
+      <div>
         <h2 class="text-[35px] md:text-4xl font-heading leading-snug mb-4 gradient-text">
       The minds behind our mission 
     </h2>
@@ -20,13 +21,15 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
     </p>
       </div>
     </div>
-    <div class="w-full flex md:w-1/2 px-2">
+    <div class="w-full flex lg:w-1/2">
       
-      <div class="w-full md:w-1/2 px-4">
-        <img src="/Group 9722.png" alt="" />
+      <div class="md:w-1/2 w-full">
+        <div class="image-flash-container">
+          <img src="/Group 9722.png" alt="" />
+        </div>
       </div>
 
-      <div class="w-full md:w-1/2 px-6 flex items-center flex-col items-start justify-center h-full">
+      <div class="md:w-1/2 w-full lg:px-6 md:pl-0 md:pr-4 pl-4 flex items-center flex-col items-start justify-center h-full">
         <div class="quote_icon mb-[25px]">
           <svg width="42" height="29" viewBox="0 0 42 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M31.7812 11.3518C31.5245 11.3518 31.2678 11.3518 31.0111 11.4C31.4724 7.26789 32.8602 3.41953 35.0161 1.83963e-07C27.6738 3.89462 22.6943 11.1625 22.4899 19.5235V19.9985C22.4899 24.7485 26.6494 28.5969 31.7837 28.5969C36.9158 28.5487 41.0754 24.7005 41.0754 19.9505C41.0754 15.2005 36.9155 11.3518 31.7812 11.3518Z" fill="black"/>
@@ -60,7 +63,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
   href="/contact" 
   class="contact_cta mt-[40px] contact_cta2 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition mb-2"
 >
-<span>
+<span data-text="Next">
   Next</span>
   <img src={LogoShape.src} alt="Vivrithi" class="w-5 h-5" />
 </a>

@@ -1,49 +1,49 @@
 <main class="overflow-hidden relative">
     <div class="slider">
       <div class="item">
-        <img src="/banners/Warehouses.png" alt="Warehouses" />
+        <img src="/public/banners/Warehouses.png" alt="Warehouses" />
         <div class="slider-content">
           <h2 class="title">Warehouses</h2>
         </div>
       </div>
       <div class="item">
-        <img src="/banners/Port.png" alt="Port" />
+        <img src="/public/banners/Port.png" alt="Port" />
         <div class="slider-content">
           <h2 class="title">Port</h2>
         </div>
       </div>
       <div class="item">
-        <img src="/banners/Energy.png" alt="Energy" />
+        <img src="/public/banners/Energy.png" alt="Energy" />
         <div class="slider-content">
           <h2 class="title">Energy</h2>
         </div>
       </div>
       <div class="item">
-        <img src="/banners/Airports.png" alt="Airports" />
+        <img src="/public/banners/Airports.png" alt="Airports" />
         <div class="slider-content">
           <h2 class="title">Airports</h2>
         </div>
       </div>
       <div class="item">
-        <img src="/banners/Logistics.png" alt="Logistics" />
+        <img src="/public/banners/Logistics.png" alt="Logistics" />
         <div class="slider-content">
           <h2 class="title">Logistics</h2>
         </div>
       </div>
       <div class="item">
-        <img src="/banners/Infrastructure.png" alt="Infrastructure" />
+        <img src="/public/banners/Infrastructure.png" alt="Infrastructure" />
         <div class="slider-content">
           <h2 class="title">Infrastructure</h2>
         </div>
       </div>
       <div class="item">
-        <img src="/banners/Manufacturing Units.png" alt="Manufacturing Units" />
+        <img src="/public/banners/Manufacturing Units.png" alt="Manufacturing Units" />
         <div class="slider-content">
           <h2 class="title">Manufacturing Units</h2>
         </div>
       </div>
       <div class="item">
-        <img src="/banners/Factories.png" alt="Factories" />
+        <img src="/public/banners/Factories.png" alt="Factories" />
         <div class="slider-content">
           <h2 class="title">Factories</h2>
         </div>
@@ -63,23 +63,25 @@
   </main>
   <script>
 const slider = document.querySelector(".slider");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+let autoplayInterval;
 
-function activate(e) {
+// 🔹 Core navigation function
+function activate(direction) {
   const items = document.querySelectorAll(".item");
-  if (!e.target.closest(".next") && !e.target.closest(".prev")) return;
+  if (!items.length) return;
 
   // Remove existing active states
   items.forEach(el => el.classList.remove("active", "active-next"));
 
-  if (e.target.closest(".next")) {
-    // Mark which one will become active *before* moving
+  if (direction === "next") {
     items[1].classList.add("active-next");
     requestAnimationFrame(() => {
       slider.append(items[0]);
       updateActive();
     });
-  } else if (e.target.closest(".prev")) {
-    // For prev, mark the one that will move to front
+  } else if (direction === "prev") {
     items[items.length - 1].classList.add("active-next");
     requestAnimationFrame(() => {
       slider.prepend(items[items.length - 1]);
@@ -88,14 +90,39 @@ function activate(e) {
   }
 }
 
+// 🔹 Update active slide after movement
 function updateActive() {
   const items = document.querySelectorAll(".item");
   items.forEach(el => el.classList.remove("active"));
   if (items[1]) items[1].classList.add("active");
 }
 
-document.addEventListener("click", activate);
+// 🔹 Manual click navigation
+nextBtn.addEventListener("click", () => {
+  activate("next");
+  resetAutoplay();
+});
+prevBtn.addEventListener("click", () => {
+  activate("prev");
+  resetAutoplay();
+});
+
+// 🔹 Autoplay logic (every 5 seconds)
+function startAutoplay() {
+  autoplayInterval = setInterval(() => {
+    activate("next");
+  }, 3000);
+}
+
+// 🔹 Reset autoplay timer when user interacts
+function resetAutoplay() {
+  //clearInterval(autoplayInterval);
+  //();
+}
+
+// 🔹 Initialize
 updateActive();
+startAutoplay();
   </script>
 
   <style>
@@ -199,6 +226,7 @@ updateActive();
   }
 
   .slider-content .title {
+    font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 20px;
@@ -219,6 +247,9 @@ updateActive();
   display: flex;
   animation: show var(--speed) ease-in-out calc(var(--speed) / 2) forwards;
   bottom:60px;
+  width: 1280px;
+  left: calc((100% - 1280px) / 2);
+  right: auto;
 }
 
   @keyframes show {
@@ -249,6 +280,14 @@ updateActive();
     cursor: pointer;
     transition: all 0.3s ease;
   }
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    .item.active .slider-content,
+.item.active-next .slider-content{
+      width: 100%;
+      left: 40px;
+      right: auto;
+    }
+  }
 
   @media (max-width: 900px) and (min-width: 651px) {
     .slider-content .title {
@@ -258,15 +297,43 @@ updateActive();
       width: 160px;
       height: 270px;
     }
+        .item.active .slider-content,
+.item.active-next .slider-content{
+      width: 100%;
+      left: 40px;
+      right: auto;
+    }
   }
 
   @media (max-width: 650px) {
+      .slider-content .title{
+        left:10px;
+        bottom:15px;
+      }
+      .item.active .slider-content,
+      .item.active-next .slider-content{
+      width: 100%;
+      left: 20px;
+      right: auto;
+      bottom:20px;
+    }
+    .item.active .slider-content .title, .item.active-next .slider-content .title{
+      font-size: 20px;
+      line-height: 24px;
+    }
     .slider-content .title {
-      font-size: 0.9rem;
+        font-size:12px;
+        line-height:15px;
+    }
+    .slider{
+      height: 275px!important;
     }
     .item {
       width: 130px;
-      height: 220px;
+      height: 170px;
+    }
+    .nav{
+      bottom: 20px;
     }
   }
 </style>

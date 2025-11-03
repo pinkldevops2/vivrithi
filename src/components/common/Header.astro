@@ -35,7 +35,7 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
          <a 
   href="/contact" 
   class="contact_cta flex items-center gap-2 text-white uppercase hover:text-blue-600 transition mb-2"
-><span>
+><span data-text="Contact Us">
   Contact Us</span>
   <img src={LogoShape.src} alt="Vivrithi" class="w-5 h-5" />
 </a>
@@ -92,6 +92,13 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
         padding: 10px 25px;
         display: flex;
         font-size: 14px;
+        transition:all ease-in 0.4s;
+    }
+    #headenvan li a:hover{
+      transform: scale(1.15);
+    }
+    #headenvan li a.contact_cta:hover{
+      transform: scale(1);
     }
     #headenvan li:first-child a{
         padding-left:0px;

@@ -3,11 +3,12 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 ---
-<div class="bg-white"><div class="container mx-auto px-4 py-[50px]">
-  <div class="flex flex-wrap -mx-2">
-    <div class="w-full md:w-1/2 px-2 flex items-center">
+<div class="bg-white w-full xl:px-0 md:px-[40px] md:py-[70px] py-[40px] px-[20px]">
+  <div class="container mx-auto">
+  <div class="flex flex-wrap items-start">
+    <div class="w-full md:w-1/2 md:pr-4 flex items-center">
       <!-- Column 1 content -->
-      <div class="p-4">
+      <div>
 <h2 class="text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text">
       Vivriti in action:<br/>
 from milestones to<br/>market moves
@@ -17,7 +18,7 @@ from milestones to<br/>market moves
     </p>
       </div>
     </div>
-    <div class="w-full flex md:w-1/2 px-4">
+    <div class="w-full flex md:w-1/2 ">
       
       <div class="slider-container milestones">
   <div class="slick-slider">
@@ -194,4 +195,16 @@ from milestones to<br/>market moves
   opacity: 1;
   transform: translateY(0);
 }
+@media (max-width: 991px) {
+  .overlay {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .overlay {
+    padding: 20px;
+  }
+}
+
 </style>
