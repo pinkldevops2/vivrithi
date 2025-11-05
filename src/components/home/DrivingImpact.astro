@@ -15,30 +15,34 @@ import MarkedShape from '../../../public/MarkedShape.svg';
     </h2>
 
 
-<div class="finance_enabled bg-[#D8F1F9] w-full flex p-5 justify-between flex-col md:flex-row">
-    <h3 class="text-lg uppercase text-[#1B1B1B] font-bold mt-[-8px]">finance enabled</h3>
-    <h2 class="text-[24px] md:text-[35px] font-heading leading-snug gradient-text">₹57,500+ cr</h2>
+<div class="bg-white flex flex-colbg-white flex flex-col w-full">
+
+    <div class="bar bg-[#D8F1F9] flex p-5 flex-col md:flex-row  justify-between" style="--target-width:100%">
+      <h3 class="bar-text text-lg uppercase text-[#1B1B1B] font-bold">finance enabled</h3>
+      <h2 class="bar-text text-[24px] md:text-[35px] font-heading text-[#1B1B1B] gradient-text" data-target="57500">₹0+ cr</h2>
+    </div>
+
+    <div class="bar bg-[#DDDDDD] flex p-5 justify-between flex-col md:flex-row md:mt-[-30px]" style="--target-width:78%">
+      <h3 class="bar-text text-lg uppercase text-[#1B1B1B] font-bold">Assets Under Management (AUM)</h3>
+      <h2 class="bar-text text-[24px] md:text-[35px] leading-[55px] font-heading text-[#1B1B1B] gradient-text" data-target="13000">₹0+ cr</h2>
+    </div>
+
+    <div class="bar bg-[#00018A] flex p-5 justify-between flex-col md:flex-row md:mt-[-30px]" style="--target-width:57%">
+      <h3 class="bar-text text-lg uppercase text-white font-bold">enterprises supported</h3>
+      <h2 class="bar-text text-[24px] md:text-[35px] font-heading text-white gradient-text2" data-target="500">0+</h2>
+    </div>
+
+    <div class="bar bg-[#BFBFE1] flex p-5 justify-between flex-col md:flex-row md:mt-[-30px]" style="--target-width:45%">
+      <h3 class="bar-text text-lg uppercase text-[#1B1B1B] font-bold">sectors served</h3>
+      <h2 class="bar-text text-[24px] md:text-[35px] font-heading text-[#1B1B1B] gradient-text" data-target="55">0+</h2>
+    </div>
+
+    <div class="bar bg-[#F8F8F8] flex p-5 justify-between flex-col md:flex-row md:mt-[-30px]" style="--target-width:35%">
+      <h3 class="bar-text text-lg uppercase text-[#1B1B1B] font-bold">years in business</h3>
+      <h2 class="bar-text text-[24px] md:text-[35px] font-heading text-[#1B1B1B] gradient-text" data-target="8">0+</h2>
+    </div>
 </div>
 
-<div class="assets_under bg-[#DDDDDD] md:w-[78%] w-full flex flex-col md:flex-row p-5 justify-between mt-0 md:mt-[-40px]">
-    <h3 class="text-lg uppercase text-[#1B1B1B] font-bold mt-[-8px]">Assets Under Management (AUM)</h3>
-    <h2 class="text-[24px] md:text-[35px] font-heading leading-snug gradient-text">₹13,000+ cr</h2>
-</div>
-
-<div class="enterprises_supported bg-[#00018A] md:w-[57%] w-full flex p-5 flex-col md:flex-row justify-between mt-0 md:mt-[-40px]">
-    <h3 class="text-lg uppercase text-white font-bold mt-[-8px]">enterprises supported</h3>
-    <h2 class="text-[24px] md:text-[35px] font-heading leading-snug gradient-text2">500+</h2>
-</div>
-
-<div class="sectors_served bg-[#BFBFE1] md:w-[45%] w-full flex flex-col md:flex-row p-5 justify-between mt-0 md:mt-[-40px]">
-    <h3 class="text-lg uppercase font-bold mt-[-8px]">sectors served</h3>
-    <h2 class="text-[24px] md:text-[35px] font-heading leading-snug gradient-text">55+ </h2>
-</div>
-
-<div class="years_business bg-[#F8F8F8] md:w-[35%] w-full flex flex-col md:flex-row p-5 justify-between mt-0 md:mt-[-40px]">
-    <h3 class="text-lg uppercase font-bold mt-[-8px]">years in business</h3>
-    <h2 class="text-[24px] md:text-[35px] font-heading leading-snug gradient-text">8+ </h2>
-</div>
 
     <img src={MarkedShape.src} alt="Vivrithi" class="absolute right-[35px] bottom-[-130px] hidden md:block" />
         </div>
@@ -51,4 +55,80 @@ import MarkedShape from '../../../public/MarkedShape.svg';
 .border_full_side{
     border: dashed 1px #F58220;
 }
+  @keyframes growBar {
+    from { width: 0%; }
+    to { width: var(--target-width); }
+  }
+  .bar {
+    width: 0%;
+    overflow: hidden;
+    animation: growBar 0.8s ease-out forwards;
+    animation-play-state: paused;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bar h2{
+    line-height: 55px;
+  }
+  .bar-text {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+  .show-text .bar-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+    @media (max-width: 650px) {
+      .bar h2{
+        line-height: 36px;
+      }
+      .bar h3{
+        line-height: 19px;
+        font-size: 15px;
+      }
+    }
 </style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const bars = document.querySelectorAll(".bar");
+
+    function countUp(element, target, duration = 1000) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          start = target;
+          clearInterval(timer);
+        }
+        if (element.textContent.includes("₹")) {
+          element.textContent = "₹" + Math.floor(start).toLocaleString() + "+ cr";
+        } else {
+          element.textContent = Math.floor(start) + "+";
+        }
+      }, 16);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const bar = entry.target;
+            bar.style.animationPlayState = "running";
+            setTimeout(() => {
+              bar.classList.add("show-text");
+              const num = bar.querySelector("[data-target]");
+              if (num) countUp(num, parseInt(num.dataset.target));
+            }, 800);
+            observer.unobserve(bar);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    bars.forEach((bar) => observer.observe(bar));
+  });
+</script>

@@ -1,7 +1,7 @@
 // src/components/SwiperSlider.jsx
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import LogoShape from '../../../public/Vivrithi_logo.svg';
@@ -45,9 +45,13 @@ export default function SwiperSlider({ slides }) {
 
       {/* Swiper Carousel */}
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={0}
         slidesPerView={2.5}
+        autoplay={{
+          delay: 2500, // 2.5s between slides
+          disableOnInteraction: false, // keeps autoplay even after manual nav
+        }}
         loop={true}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex + 1)}
