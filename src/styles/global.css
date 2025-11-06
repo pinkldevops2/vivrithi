@@ -11,11 +11,14 @@
   --font-sans: "Inter", sans-serif;
   --font-heading: "Poppins", sans-serif;
 }
-
 body{
   font-size: 18px;
   color:#1B1B1B;
   line-height:24px;
+}
+.logoanimation svg{
+  width: 250px;
+  padding-bottom: 37px;
 }
 .container{
   max-width:1280px;
@@ -25,7 +28,15 @@ body{
     background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(0, 1, 138, 1) 100%);
     letter-spacing:1px;
 }
-
+.logoanimation::after{
+  content: '';
+  width: 60px;
+  height: 24px;
+  position: absolute;
+  background-color: #fff;
+  bottom: 21px;
+  right: -34px;
+}
 .gradient-text {
   background: linear-gradient(90deg, #00018A, #3BBAE2);
   -webkit-background-clip: text;
@@ -186,7 +197,9 @@ body{
       -webkit-text-fill-color: transparent;
       font-size: 35px !important;
     }
-
+    #animatedSVG2{
+      width: 280px;
+    }
     /* Orange dashed separator */
     .orange-dashed {
       border-left: 2px dashed #f58220;
@@ -454,6 +467,12 @@ body{
       }
       .image-wrapper, .image-wrapper img{
         width: 380px;
+      }
+      .logoanimation{
+        display: none;
+      }
+      .blog_banner{
+        width: 100%;
       }
     }
     @media (max-width: 768px) and (min-width: 650px) {
