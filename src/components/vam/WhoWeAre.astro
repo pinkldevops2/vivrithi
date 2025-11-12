@@ -12,7 +12,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
     <!-- Paragraph -->
     <div data-reveal class="fade-up flex flex-col items-start  h-full justify-around">
         <h2 class="text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text">
-            Bespoke debt solutions for ambitious businesses
+            Purpose-built credit that outperforms the market
         </h2>
     
         <div class="md:w-2/3 blog_banner order-2 md:order-1">
@@ -64,12 +64,13 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
                         </span>
                       </a>
                 <div class="hover-dispaly">
-                  <p data-reveal class="fade-up text-[18px] font-semibold mb-4">
-                 At Vivitri Capital Limited (VCL), we help mid-market enterprises scale, invest, and operate with confidence. 
+                  <p data-reveal class="fade-up font-normal text-[18px]  mb-4">
+                Founded in 2019, Vivriti Asset Management (VAM) is a SEBI and IFSCA-registered asset manager, creating structured, transparent, and high-quality private credit solutions for India’s mid-market enterprises. We invest in debt issued by businesses that are scaling, cash flow positive, and ready to grow with purpose. 
                 </p>
-                <p data-reveal class="fade-up font-normal text-[18px]">
-                Founded in 2017 and based in Chennai, we’re transforming the lending landscape with fast, flexible, and tech-enabled debt solutions designed to solve real business challenges. 
+                  <p data-reveal class="fade-up text-[18px] font-semibold">
+                 As part of the Vivriti Group, which over the last 8+ years has built a trusted franchise with ₹13,000+ crore in assets, VAM supports 500+ enterprises across 55+ sectors and 20+ states.
                 </p>
+                
                 </div>
                 
           </div>
@@ -77,7 +78,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
       <div class="basis-1/2 flex flex-col">
         <div class="w-full shrink-0 bg-[url(/vivrithi-capital.png)] bg-cover bg-center  min-h-[338px] xl:aspect-159/191 lg:aspect-auto object-cover flex items-center mb-[20px] flex-col justify-end">
                  <h2 class="text-[18px] font-heading leading-[120%] text-white uppercase">
-                    Vivriti capital
+                    Vivriti ASSET Management
                 </h2>
                  <a
                         href="/contact"
@@ -91,7 +92,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
           <div class="w-full shrink-0 bg-[url(/what-we-do.png)] bg-cover bg-center xl:aspect-53/43 lg:aspect-auto object-cover flex items-start flex-1 p-5 flex-col justify-end overflow-hidden text-dispalyhover">
             <div class="hover-dispaly">
                 <p data-reveal class="fade-up font-normal text-[18px]">
-                 Part of Vivriti Group, managing ₹13,000+ crore in assets and supporting 500+ enterprises across 20+ states, we bring deep sector expertise to growth-stage businesses. 
+                 We provide scalable, purpose-driven capital beyond traditional debt — with discipline, transparency, and risk management to deliver real business outcomes.
                 </p>
                 </div>
                  <h2 class="text-[18px] font-heading leading-[120%] mt-4 gradient-text uppercase">
@@ -131,9 +132,10 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
 	  transform-origin: center!important;
 	}
 .hover-dispaly{
-  position: relative;
+  position: absolute;
   left: -200%;
   transition: all .3s ease-in-out;
+  z-index: -2;
 }
 .text-dispalyhover:hover{
   cursor: pointer;
@@ -144,6 +146,8 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
 }
 .text-dispalyhover:hover .hover-dispaly{
   left: 0;
+  position: relative;
+  z-index: initial;
 }
 .text-dispalyhover:hover .contact_cta {
   right:200%;
