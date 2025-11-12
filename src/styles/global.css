@@ -28,6 +28,9 @@ body{
     background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(0, 1, 138, 1) 100%);
     letter-spacing:1px;
 }
+.contact_cta.contact_cta-wwhite{
+  background: #fff;
+}
 .logoanimation::after{
   content: '';
   width: 60px;
