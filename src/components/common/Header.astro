@@ -122,7 +122,7 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
   window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Always visible near top
+    
     if (currentScroll <= 0) {
       header.classList.remove("hide");
       header.classList.add("show");
@@ -130,11 +130,11 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
     }
 
     if (currentScroll > lastScroll && currentScroll > 100) {
-      // Scrolling down
+      
       header.classList.remove("show");
       header.classList.add("hide");
     } else if (currentScroll < lastScroll) {
-      // Scrolling up
+      
       header.classList.remove("hide");
       header.classList.add("show");
     }

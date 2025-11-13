@@ -2,9 +2,9 @@
 import LogoShape from '../../../public/Vivrithi_logo.svg';
 ---
 
-<div class="w-full shrink-0 bg-[url(/milestone.png)] bg-cover bg-center min-h-[400px] object-cover flex items-center flex-col justify-center overflow-hidden">
+<div class="w-full shrink-0 bg-[url(/milestone.png)] bg-cover bg-center min-h-[400px] object-cover flex items-center flex-col justify-center overflow-hidden milstone-overlay">
   <div class="container mx-auto">
-    <div class="milestone-contant w-full sm:w-3/5 p-10">
+    <div class="milestone-contant w-full sm:w-3/5 p-10 relative">
       <h3 class="text-white text-[35px] font-light mb-6 font-heading leading-[38px]">Let’s shape growth, together</h3>
       <p class="text-white text-[18px] font-light mb-6">At VAM, we don’t just invest in debt; we invest in resilience, growth, and possibility. We’re here to help mid-market enterprises scale with confidence, supported by structured capital, deep expertise, and a partner that understands their journey.</p>
       <a
@@ -20,4 +20,18 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
   </div>
 </div>
 
+<style>
+  .milstone-overlay{
+    position: relative;
+  }
+  .milstone-overlay::before{
+    content:'';
+    width: 100%;
+    height:400px;
+    background: #0000008f;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+</style>
 
