@@ -347,9 +347,15 @@ import Filter from "../../../public/filter.svg";
   .blog-container .blog-card:nth-last-child(1), .blog-container .blog-card:nth-last-child(2){
     border-bottom: initial;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 639px) {
 .blog-container .blog-card:nth-last-child(2){
     border-bottom: 1px dashed #F58220;
+  }
+  .blog-container .blog-card:nth-child(odd){
+    padding-right: 0px;
+  }
+  .blog-container .blog-card:nth-child(even){
+    padding-left: 0px;
   }
   }
 </style>
