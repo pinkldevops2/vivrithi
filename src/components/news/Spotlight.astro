@@ -13,7 +13,7 @@ import Filter from "../../../public/filter.svg";
         </h2>
       </div>
 
-      <div class="w-full md:w-8/12">
+      <div class="w-full md:w-8/12 hidden md:block">
         <div class="flex justify-start sm:justify-end">
           <a
           data-reveal
@@ -58,7 +58,7 @@ import Filter from "../../../public/filter.svg";
   </div>
 </div>
 
-<div class="categories-card bg-[#F8F7F3] py-8 mb-8">
+<div class="categories-card bg-[#F8F7F3]  py-8 sm:mb-8 mb:0">
   <div class="flex justify-between px-4 mb-10">
     <h6>Top News</h6>
   </div>
@@ -141,6 +141,19 @@ import Filter from "../../../public/filter.svg";
   </div>
 </div>
 
+      </div>
+
+      <div class="w-full md:w-8/12  block md:hidden">
+        <div class="flex justify-start sm:justify-end">
+          <a
+          data-reveal
+          class="fade-up contact_cta contact_cta5 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition w-fit px-4 py-3"
+        >
+          <span data-text="Filters" class="uppercase text-[14px]">Filters</span>
+          <img src={Filter.src} alt="Vivrithi" class="w-5 h-5" />
+        </a>
+        </div>
+        
       </div>
 
       <div class="w-full md:w-8/12">
