@@ -1,5 +1,6 @@
 ---
 import Header from '../components/common/Header.astro';
+import GetInTouch from '../components/common/HomeGetInTouch.astro'
 import BannerIntro from '../components/home/BannerIntro.astro';
 import Banner from '../components/home/Banner.astro';
 import Footer from '../components/common/Footer.astro';
@@ -29,20 +30,21 @@ const slides = [
 <Layout>
 	<Header />
 	<BannerIntro />
+	<GetInTouch/>
 	<Banner />
 	<Transforming />
 	<DrivingImpact />
 	<TailoredCapital />
 	<GlobalCapital />	
 	<AssetManagement />
-	<section class="py-12">
+	<!-- <section class="py-12">
 		
 		<div data-reveal class="fade-up testimonials">
 			<SwiperSlider slides={slides} client:only="react" />
 		</div>
-	</section>
+	</section> -->
 	<Insights />
-	<Testimonials />	
+	<!-- <Testimonials /> -->	
 	<MilestonesMarket/>
 
 
