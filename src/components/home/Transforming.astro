@@ -10,7 +10,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
 
     <!-- Paragraph -->
     <div data-reveal class="fade-up pt-[25px] flex justify-start flex-col items-start">
-        <h2 class="text-[28px] md:text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text">
+        <h2 class="text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text">
       Transforming mid-market ambition into enterprise success
 
     </h2>
@@ -34,7 +34,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
       
       <ul class="grid grid-cols-1 grid-cols-2 w-full max-w-3xl banner_sub_grid">
     <!-- Card 1 -->
-    <li class="group [perspective:1000px] top_no_padding left_no_padding">
+    <li class="group [perspective:1000px] top_no_padding left_no_padding hover:cursor-pointer">
       <div class="flip-inner relative h-64 w-full text-center transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         <div class="absolute inset-0 flex flex-col items-start justify-between rounded-xl text-xl font-semibold [backface-visibility:hidden]">
           <div class="number_fill text-sm">01</div>
@@ -54,7 +54,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
     </li>
 
     <!-- Card 2 -->
-    <li class="group [perspective:1000px] right_no_padding top_no_padding right_no_border">
+    <li class="group [perspective:1000px] right_no_padding top_no_padding right_no_border hover:cursor-pointer">
       <div class="flip-inner relative h-64 w-full text-center transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         <div class="absolute inset-0 flex flex-col items-start justify-between rounded-xl text-xl font-semibold [backface-visibility:hidden]">
           <div class="number_fill text-sm">02</div>
@@ -74,7 +74,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
     </li>
 
     <!-- Card 3 -->
-    <li class="group [perspective:1000px] left_no_padding bottom_no_border">
+    <li class="group [perspective:1000px] left_no_padding bottom_no_border hover:cursor-pointer">
       <div class="flip-inner relative h-64 w-full text-center transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         <div class="absolute inset-0 flex flex-col items-start justify-between rounded-xl text-xl font-semibold [backface-visibility:hidden]">
           <div class="number_fill text-sm">03</div>
@@ -94,7 +94,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
     </li>
 
     <!-- Card 4 -->
-    <li class="group [perspective:1000px] right_no_padding right_no_border bottom_no_border">
+    <li class="group [perspective:1000px] right_no_padding right_no_border bottom_no_border hover:cursor-pointer">
       <div class="flip-inner relative h-64 w-full text-center transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         <div class="absolute inset-0 flex flex-col items-start justify-between rounded-xl text-xl font-semibold [backface-visibility:hidden]">
           <div class="number_fill text-sm">04</div>
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Start flipping every 5 seconds
-  interval = setInterval(flipNext, 5000);
+  interval = setInterval(flipNext, 3000);
 
   // Pause auto flipping while any card is hovered
   cards.forEach(card => {
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(interval);
     });
     card.closest(".group").addEventListener("mouseleave", () => {
-      interval = setInterval(flipNext, 5000);
+      interval = setInterval(flipNext, 3000);
     });
   });
 });
