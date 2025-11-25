@@ -1,0 +1,185 @@
+---
+/* Nothing required in Astro frontmatter here */
+---
+
+<!-- HTML -->
+<div class="wrapper">
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="269" height="235" viewBox="0 0 269 235" fill="none">
+
+    <!-- BLUE paths -->
+    <path id="p1" d="M0.495361 0.42627C0.495361 0.42627 6.86538 47.3294 18.7298 72.4263C36.9642 110.998 49.1069 125.45 83.8527 152.141C110.444 172.567 146.371 180.426 167.21 198.426C180.382 209.803 193.259 234.426 193.259 234.426" stroke="#44C8F5" stroke-dasharray="5 5"/>
+
+    <path id="p2" d="M0.495361 0.42627L96.8773 59.5691C96.8773 59.5691 185.444 113.569 198.469 167.569C205.789 197.916 193.259 234.426 193.259 234.426" stroke="#44C8F5" stroke-dasharray="5 5"/>
+
+    <!-- ORANGE paths -->
+    <path id="p3" d="M268.495 0.42627C268.495 0.42627 262.125 47.3294 250.261 72.4263C232.027 110.998 219.884 125.45 185.138 152.141C158.547 172.567 122.62 180.426 101.781 198.426C88.6091 209.803 75.7315 234.426 75.7315 234.426" stroke="#F58220" stroke-dasharray="5 5"/>
+
+    <path id="p4" d="M268.495 0.42627L172.113 59.5691C172.113 59.5691 83.5463 113.569 70.5217 167.569C63.2022 197.916 75.7315 234.426 75.7315 234.426" stroke="#F58220" stroke-dasharray="5 5"/>
+
+  </svg>
+
+  <!-- Meteors -->
+  <div class="meteor-blue" id="b1"></div>
+  <div class="meteor-blue" id="b2"></div>
+<!--   <div class="meteor-blue" id="b3"></div> -->
+
+  <div class="meteor-orange" id="o1"></div>
+  <div class="meteor-orange" id="o2"></div>
+<!--   <div class="meteor-orange" id="o3"></div> -->
+
+</div>
+
+
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.logoani{
+  text-align: center;
+}
+.wrapper {
+  position: relative;
+  width: 269px;
+  height: 235px;
+}
+
+
+.meteor-blue {
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  border-radius: 50px;
+  background: linear-gradient(
+    to left,
+    rgba(0, 119, 255),
+    rgb(0, 119, 255),
+    rgba(0, 119, 255)
+  );
+  transform: translate(-50%, -50%);
+  /*filter: drop-shadow(0 0 6px #00c8ff) drop-shadow(0 0 12px #0094ff);*/
+}
+
+/* .meteor-blue::after {
+  content:"";
+  position:absolute;
+  width:55px;
+  height:3px;
+  background:linear-gradient(to right,rgba(0,180,255,0.4),transparent);
+  left:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  filter:blur(4px);
+} */
+
+/* ORANGE METEOR – reversed gradient */
+.meteor-orange {
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  border-radius: 50px;
+  background: linear-gradient(
+    to left,
+    rgba(255,150,0,1),
+    rgba(255,150,0,1),
+    rgba(255,150,0,1)
+  );
+  transform: translate(-50%, -50%);
+  /* filter: drop-shadow(0 0 6px #ff6600) drop-shadow(0 0 12px #ff3300); */
+}
+
+/* .meteor-orange::after {
+  content:"";
+  position:absolute;
+  width:55px;
+  height:3px;
+  background:linear-gradient(to right,rgba(255,120,0,0.4),transparent);
+  left:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  filter:blur(4px);
+} */
+</style>
+
+
+<!-- CLIENT-SIDE SCRIPT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" is:defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" is:defer></script>
+
+<script is:client>
+  gsap.registerPlugin(MotionPathPlugin);
+
+  const METEOR_SPEED = 2.0;
+
+  function blueMeteor(id, path, speed, delay) {
+    gsap.to(id, {
+      duration: speed,
+      repeat: -1,
+      ease: "none",
+      delay: delay,
+      motionPath: {
+        path,
+        align: path,
+        autoRotate: true,
+        start: 1,
+        end: 0,
+        alignOrigin: [0.5, 0.5],
+      },
+    });
+  }
+
+  function orangeMeteor(id, path, speed, delay) {
+    gsap.to(id, {
+      duration: speed,
+      repeat: -1,
+      ease: "none",
+      delay,
+      motionPath: {
+        path,
+        align: path,
+        autoRotate: true,
+        alignOrigin: [0.5, 0.5],
+      },
+    });
+  }
+
+  /* BLUE */
+  blueMeteor("#b1", "#p1", METEOR_SPEED, 0);
+  blueMeteor("#b2", "#p2", METEOR_SPEED, 0.3);
+ /*  blueMeteor("#b3", "#p1", METEOR_SPEED, 0.6); */
+
+  /* ORANGE */
+  orangeMeteor("#o1", "#p3", METEOR_SPEED, 0.2);
+  orangeMeteor("#o2", "#p4", METEOR_SPEED, 0.5);
+/*   orangeMeteor("#o3", "#p3", METEOR_SPEED, 0.8); */
+</script>
+
+<style>
+.wrapper {
+  position: relative;
+  width: 269px;
+  height: 235px;
+}
+
+/* BODY STYLES SHOULD BE IN PAGE OR GLOBAL CSS */
+.meteor-blue,
+.meteor-orange {
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  border-radius: 50px;
+  transform: translate(-50%, -50%);
+}
+
+.meteor-blue {
+  background: linear-gradient(to left, rgba(0,119,255), rgba(0,119,255), rgba(0,119,255));
+}
+
+.meteor-orange {
+  background: linear-gradient(to left, rgba(255,150,0), rgba(255,150,0), rgba(255,150,0));
+}
+</style>

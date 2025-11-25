@@ -15,6 +15,8 @@ import DrivingImpact from '@/components/home/DrivingImpact.astro';
 import GlobalCapital from '@/components/home/GlobalCapital.astro';
 import TailoredCapital from '@/components/home/TailoredCapital.astro';
 import SwiperSlider from "../components/common/SwiperSlider";
+import DrivingImpactSwiper from "../components/common/DrivingImpactSwiper";
+import FooteerMobile from "../components/common/FooterMobile.astro"
 
 const slides = [
   { img: "/images/slide1.jpg", title: "Accessing growth capital is just one hurdle for India’s mid-market enterprises.",cname:"John Doe",designation:"CTO, Ailitic",location:"Bangalore, India" },
@@ -23,6 +25,12 @@ const slides = [
   { img: "/images/slide1.jpg", title: "Accessing growth capital is just one hurdle for India’s mid-market enterprises.",cname:"John Doe",designation:"CTO, Ailitic",location:"Bangalore, India" },
   { img: "/images/slide1.jpg", title: "Accessing growth capital is just one hurdle for India’s mid-market enterprises.",cname:"John Doe",designation:"CTO, Ailitic",location:"Bangalore, India" },
   { img: "/images/slide1.jpg", title: "Accessing growth capital is just one hurdle for India’s mid-market enterprises.",cname:"John Doe",designation:"CTO, Ailitic",location:"Bangalore, India" }
+];
+
+const slides1 = [
+  { id: "01", title: "Invest", desc: "Access the right funding at the right time..." },
+  { id: "02", title: "Build", desc: "Grow your business with strategic support..." },
+  { id: "03", title: "Scale", desc: "Scale efficiently with tailored solutions..." },
 ];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -34,22 +42,31 @@ const slides = [
 	<GetInTouch/>
 	<Banner />
 	<Transforming />
+
+	<!-- <section class="py-12">
+		
+		<div data-reveal class="fade-up testimonials">
+			<DrivingImpactSwiper slides={slides1} client:only="react" />
+		</div>
+	</section> -->
+
 	<DrivingImpact />
 	<TailoredCapital />
 	<GlobalCapital />	
 	<AssetManagement />
-	<!-- <section class="py-12">
+	 <!-- <section class="py-12">
 		
 		<div data-reveal class="fade-up testimonials">
 			<SwiperSlider slides={slides} client:only="react" />
 		</div>
-	</section> -->
+	</section>  -->
 	<Insights />
-	<!-- <Testimonials />  -->
+	<!--  <Testimonials />  -->
 	<TestimonialsLeader/>
 	<MilestonesMarket/>
 
 
 
-	<Footer />
+	<Footer/>
+	<FooteerMobile/>
 </Layout>

@@ -1,5 +1,7 @@
 ---
 import LogoShape from '../../../public/Vivrithi_logo.svg';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 ---
 <div class="bg-white w-full xl:px-0 md:px-[40px] md:pt-[70px] pt-[30px] px-[20px]">
 <div class="container mx-auto">
@@ -114,8 +116,51 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
     </li>
   </ul>
 
-
     </div>
+
+    <!-- <div class="w-full">
+      <div class="driving-impact-slider">
+  
+  <div>
+    <div class="top_no_padding left_no_padding">
+      <div class="w-full text-center">
+
+        <div class="inset-0 flex flex-col items-start justify-between text-white banner_sub_grid_item_bg p-4">
+          <div class="number_fill text-sm">01</div>
+          <div class="content_fill text-left">
+            <h3 class="text-lg uppercase">Invest</h3>
+            <div class="mt-2 desc text-sm md:text-lg">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
+          </div>
+          <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto absolute right-2 top-2" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="top_no_padding left_no_padding">
+      <div class="f w-full text-center">
+
+        <div class="inset-0 flex flex-col items-start justify-between text-white banner_sub_grid_item_bg p-4">
+          <div class="number_fill text-sm">02</div>
+          <div class="content_fill text-left">
+            <h3 class="text-lg uppercase">Build</h3>
+            <div class="mt-2 desc text-sm md:text-lg">Grow with strategic capital and expert guidance.</div>
+          </div>
+          <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto absolute right-2 top-2" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    </div> -->
+
+
+
+
   </div>
 </div>
 </div>
@@ -230,7 +275,14 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
 }
 
 </style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+
 <script>
+  
+import "slick-carousel";
+
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".flip-inner");
   let current = -1;
@@ -263,5 +315,56 @@ document.addEventListener("DOMContentLoaded", () => {
       interval = setInterval(flipNext, 3000);
     });
   });
+});
+
+
+/* slick slider */
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".driving-impact-slider");
+
+  const start = () => {
+    if (!window.$) {
+      setTimeout(start, 50);
+      return;
+    }
+
+    window.$(slider).slick({
+      centerMode: true,
+      centerPadding: "60px",
+      slidesToShow: 3,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            centerPadding: "40px"
+          }
+        }
+      ]
+    });
+
+    // 👇 Set same height = tallest slide
+    const equalizeHeight = () => {
+      let maxHeight = 0;
+
+      slider.querySelectorAll(".card-wrapper").forEach(card => {
+        maxHeight = Math.max(maxHeight, card.offsetHeight);
+      });
+
+      slider.querySelectorAll(".card-wrapper").forEach(card => {
+        card.style.height = maxHeight + "px";
+      });
+    };
+
+    // Run once Slick finishes
+    setTimeout(equalizeHeight, 300);
+    window.addEventListener("resize", equalizeHeight);
+  };
+
+  start();
 });
 </script>
