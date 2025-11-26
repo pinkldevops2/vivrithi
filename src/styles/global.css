@@ -545,8 +545,10 @@ body{
   }
   .arrow-holder {
     width: calc(100% - 40px);
-    justify-content: space-between;
-    top: -85px;
+    justify-content: center;
+    gap: 20px;
+    top: auto;
+    bottom: -60px;
   }
   #prev,
   #next,

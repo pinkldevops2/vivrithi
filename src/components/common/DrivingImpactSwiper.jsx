@@ -12,29 +12,18 @@ export default function DrivingImpactSwiper({ slides }) {
 
   return (
     <div className="driving-impact-slider relative w-full">
-      {/* Header and Counter */}
-      <div className="container mx-auto flex justify-between flex-col md:flex-row">
-       
-        
-
-        {/* Navigation */}
-        <div className="flex justify-center items-center">
-          <button className="swiper-button-prev-custom" aria-label="Previous Slide">
-            {/* SVG prev arrow */}
-          </button>
-          <button className="swiper-button-next-custom" aria-label="Next Slide">
-            {/* SVG next arrow */}
-          </button>
-        </div>
+      {/* Navigation */}
+      <div className="container mx-auto flex justify-center items-center mb-4">
+        <button className="swiper-button-prev-custom" aria-label="Previous Slide"></button>
+        <button className="swiper-button-next-custom" aria-label="Next Slide"></button>
       </div>
 
-      {/* Swiper Carousel */}
       <Swiper
         modules={[Navigation, Autoplay]}
-        spaceBetween={10}
-        slidesPerView={1.5}
-        centeredSlides={true} // ✅ Center mode
+        centeredSlides={true}
         loop={true}
+        slidesPerView={"auto"}         // 👈 Important
+        spaceBetween={20}              // 👈 gap between slides
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -45,26 +34,20 @@ export default function DrivingImpactSwiper({ slides }) {
           nextEl: ".swiper-button-next-custom",
           prevEl: ".swiper-button-prev-custom",
         }}
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          768: { slidesPerView: 1.5 },
-          1024: { slidesPerView: 2.5 },
-        }}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            {/* Driving Impact Card */}
+          <SwiperSlide
+            key={index}
+            style={{ width: "75%" }}   // 👈 MAIN FIX: Show 0.25 slide preview on both sides
+          >
             <div className="relative p-6 banner_sub_grid_item_bg text-white driving-impact-card h-full flex flex-col justify-between">
-              {/* Top Number */}
               <div className="number_fill text-sm">{slide.id}</div>
 
-              {/* Content */}
               <div className="content_fill mt-4">
                 <h3 className="text-lg uppercase">{slide.title}</h3>
                 <p className="mt-2 desc text-sm md:text-lg">{slide.desc}</p>
               </div>
 
-              {/* Logo */}
               <img
                 src={LogoShape.src}
                 alt="Vivrithi"
@@ -74,6 +57,15 @@ export default function DrivingImpactSwiper({ slides }) {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div class="bg-white w-full px-[20px]">
+      <a 
+  href="/contact" 
+  class="contact_cta w-full md:w-auto inline-flex w-auto mt-[20px] contact_cta3 items-center gap-2 text-white uppercase hover:text-blue-600 transition mb-2 px-[30px] py-[10px] text-[14px] justify-center"
+>
+  <span data-text="Know our story">Know our story</span>
+  <img src={LogoShape.src} alt="Vivrithi" class="w-5 h-5" />
+</a>
+</div>
     </div>
   );
 }

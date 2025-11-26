@@ -125,9 +125,7 @@ import 'slick-carousel/slick/slick-theme.css';
 </div>
 <style>
 .contact_cta3{
-    padding: 10px 30px;
-    display: flex;
-    font-size: 14px;
+    display: none;
 }
 
 .banner_sub_grid li{
@@ -232,7 +230,13 @@ import 'slick-carousel/slick/slick-theme.css';
 .auto-flipped {
   transform: rotateY(180deg) !important;
 }
-
+@media (min-width: 768px) {
+    .contact_cta3{
+        padding: 10px 30px;
+        display: flex;
+        font-size: 14px;
+    }
+}
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>

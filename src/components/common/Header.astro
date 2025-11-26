@@ -47,15 +47,19 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
     id="mobileMenu" 
     class="fixed top-0 left-0 h-full w-64 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 lg:hidden z-50"
   >
-    <ul class="flex flex-col text-gray-700 font-medium text-base mt-20 px-4">
-      <li><a href="/about" class="hover:text-blue-600 transition py-2">About Us</a></li>
-      <li><a href="/products" class="hover:text-blue-600 transition py-2">Borrow</a></li>
-      <li><a href="/blog" class="hover:text-blue-600 transition py-2">Invest</a></li>
-      <li><a href="/advisory" class="hover:text-blue-600 transition py-2">Advisory</a></li>
-      <li><a href="/group" class="hover:text-blue-600 transition py-2">Tech</a></li>
+  <div class="px-4 pt-5">
+  <img src={vivrithiLogo.src} alt="Vivrithi Logo" class="max-w-[180px] sm:max-w-[initial] sm:min-w-[180px] w-auto" />
+
+  </div>
+    <ul class="flex flex-col text-gray-700 font-medium text-base mt-5 px-4">
+      <li><a href="/about" class="hover:text-blue-600 transition block py-2">About Us</a></li>
+      <li><a href="/products" class="hover:text-blue-600 transition block py-2">Borrow</a></li>
+      <li><a href="/blog" class="hover:text-blue-600 transition block py-2">Invest</a></li>
+      <li><a href="/advisory" class="hover:text-blue-600 transition block py-2">Advisory</a></li>
+      <li><a href="/group" class="hover:text-blue-600 transition block py-2">Tech</a></li>
 
       <li class="border-t mt-3 pt-3">
-        <a href="/contact" class="contact_cta flex items-center gap-2 text-white uppercase py-2">
+        <a href="/contact" class="contact_cta flex justify-center items-center gap-2 text-white uppercase py-2">
           <span data-text="Contact Us">Contact Us</span>
           <img src={LogoShape.src} class="w-5 h-5" />
         </a>

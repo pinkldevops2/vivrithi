@@ -16,7 +16,10 @@ import GlobalCapital from '@/components/home/GlobalCapital.astro';
 import TailoredCapital from '@/components/home/TailoredCapital.astro';
 import SwiperSlider from "../components/common/SwiperSlider";
 import DrivingImpactSwiper from "../components/common/DrivingImpactSwiper";
-import FooteerMobile from "../components/common/FooterMobile.astro"
+import FooteerMobile from "../components/common/FooterMobile.astro";
+import CapitalSlider from "../components/common/CapitalSlider";
+import ThinkTankSlider from "../components/common/ThinkTankSlider";
+import LogoShape from "./public/Vivrithi_logo.svg";
 
 const slides = [
   { img: "/images/slide1.jpg", title: "Accessing growth capital is just one hurdle for India’s mid-market enterprises.",cname:"John Doe",designation:"CTO, Ailitic",location:"Bangalore, India" },
@@ -34,6 +37,15 @@ const slides1 = [
   { id: "04", title: "Tech", desc: "Access the right funding, at the right time, with tailored structures to scale your business seamlessly." },
 ];
 
+const slides2 = [
+  { id: "01", title: "Specialised mid-market focus", desc: "Access to 1,200+ domestic and global investors, from HNIs and UHNIs to institutions and family offices." },
+  { id: "02", title: "Comprehensive solutions beyond credit", desc: "Access to 1,200+ domestic and global investors, from HNIs and UHNIs to institutions and family offices." },
+  { id: "03", title: "Tech-driven platforms", desc: "Access to 1,200+ domestic and global investors, from HNIs and UHNIs to institutions and family offices." },
+  { id: "04", title: "Integrated capital ecosystem", desc: "Access to 1,200+ domestic and global investors, from HNIs and UHNIs to institutions and family offices." },
+  { id: "05", title: "Disciplined risk and compliance", desc: "Access to 1,200+ domestic and global investors, from HNIs and UHNIs to institutions and family offices." },
+  { id: "06", title: "Investor network depth", desc: "Access to 1,200+ domestic and global investors, from HNIs and UHNIs to institutions and family offices." },
+];
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -46,7 +58,7 @@ const slides1 = [
 
 	<section class="py-6 sm:hidden block">
 		<div data-reveal class="fade-up ">
-			<DrivingImpactSwiper slides={slides1} client:only="react" />
+			<DrivingImpactSwiper slides={slides1} client:only="react" />			
 		</div>
 	</section> 
 
@@ -54,6 +66,14 @@ const slides1 = [
 	<TailoredCapital />
 	<GlobalCapital />	
 	<AssetManagement />
+
+<section class="sm:hidden block">
+		<div data-reveal class="fade-up ">
+			<CapitalSlider slides={slides2} client:only="react" />			
+		</div>
+	</section> 
+
+
 	 <!-- <section class="py-12">
 		
 		<div data-reveal class="fade-up testimonials">
@@ -61,9 +81,22 @@ const slides1 = [
 		</div>
 	</section>  -->
 	<Insights />
+	<section class="sm:hidden block">
+	<ThinkTankSlider slides={slides2} client:only="react"/>
+	<div class="px-3 pb-2 bg-[#3bbae212]">
+	<a
+          href="/contact"
+          class="contact_cta px-[30px] text-center py-[10px] text-[14px] flex items-center justify-center gap-2 text-white uppercase hover:text-blue-600 transition mb-2"
+          ><span data-text="View more"> View more</span>
+          <img src={LogoShape.src} class="w-5 h-5" />
+        </a>
+	</div>
+</section>
 	<!--  <Testimonials />  -->
 	<TestimonialsLeader/>
 	<MilestonesMarket/>
+
+	
 
 
 
