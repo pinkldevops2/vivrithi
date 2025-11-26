@@ -13,17 +13,12 @@ export default function DrivingImpactSwiper({ slides }) {
   return (
     <div className="driving-impact-slider relative w-full">
       {/* Header and Counter */}
-      <div className="container mx-auto flex justify-between flex-col md:flex-row pb-8 px-4">
-      
-        <div className="w-[40%] flex items-end hidden md:flex">
-          <h2 className="text-[35px] md:text-4xl font-heading leading-[35px] gradient-text">
-            {currentSlide}
-          </h2>{" "}
-          / <span className="text-gray-700 font-medium">{slides.length}</span>
-        </div>
+      <div className="container mx-auto flex justify-between flex-col md:flex-row">
+       
+        
 
         {/* Navigation */}
-        <div className="flex justify-center items-center gap-6 mt-8">
+        <div className="flex justify-center items-center">
           <button className="swiper-button-prev-custom" aria-label="Previous Slide">
             {/* SVG prev arrow */}
           </button>
@@ -36,8 +31,8 @@ export default function DrivingImpactSwiper({ slides }) {
       {/* Swiper Carousel */}
       <Swiper
         modules={[Navigation, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={2.5}
+        spaceBetween={10}
+        slidesPerView={1.5}
         centeredSlides={true} // ✅ Center mode
         loop={true}
         autoplay={{

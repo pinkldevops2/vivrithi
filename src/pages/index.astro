@@ -28,9 +28,10 @@ const slides = [
 ];
 
 const slides1 = [
-  { id: "01", title: "Invest", desc: "Access the right funding at the right time..." },
-  { id: "02", title: "Build", desc: "Grow your business with strategic support..." },
-  { id: "03", title: "Scale", desc: "Scale efficiently with tailored solutions..." },
+  { id: "01", title: "Invest", desc: "Access the right funding, at the right time, with tailored structures to scale your business seamlessly." },
+  { id: "02", title: "Borrow", desc: "Access the right funding, at the right time, with tailored structures to scale your business seamlessly." },
+  { id: "03", title: "Strategize", desc: "Access the right funding, at the right time, with tailored structures to scale your business seamlessly." },
+  { id: "04", title: "Tech", desc: "Access the right funding, at the right time, with tailored structures to scale your business seamlessly." },
 ];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -43,12 +44,11 @@ const slides1 = [
 	<Banner />
 	<Transforming />
 
-	<!-- <section class="py-12">
-		
-		<div data-reveal class="fade-up testimonials">
+	<section class="py-6 sm:hidden block">
+		<div data-reveal class="fade-up ">
 			<DrivingImpactSwiper slides={slides1} client:only="react" />
 		</div>
-	</section> -->
+	</section> 
 
 	<DrivingImpact />
 	<TailoredCapital />

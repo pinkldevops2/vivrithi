@@ -471,6 +471,10 @@ body{
 .swiper-button-next-custom:hover svg, .swiper-button-prev-custom:hover svg{
   transform: scale(1.2);
 }
+.banner_sub_grid_item_bg{
+    background: #3BBAE2;
+    background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(0, 1, 138, 1) 100%);
+}
 @media (max-width: 991px) {
   h2 br{
     display: none;
