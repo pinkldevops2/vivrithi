@@ -66,7 +66,7 @@ export default function DrivingImpactSwiper({ slides }) {
         {slides.map((slide, index) => (
           <SwiperSlide
             key={index}
-            style={{ width: "75%" }}   // 👈 MAIN FIX: Show 0.25 slide preview on both sides
+            style={{ width: "75%", height: 'auto' }}   // 👈 MAIN FIX: Show 0.25 slide preview on both sides
           >
             <div className="relative p-6 banner_sub_grid_item_bg text-white driving-impact-card h-full flex flex-col justify-between">
               <div className="number_fill text-sm">{slide.id}</div>
