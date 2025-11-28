@@ -1,25 +1,25 @@
 ---
-
+import LogoShape from '../../../public/logovcl.svg';
 ---
 
-<div class="w-full bg-[#F5FBFD] flex justify-between">
-  <div class="container mx-auto px-0 md:px-4">
+<div class="w-full bg-[#F5FBFD] md:flex justify-between relative">
+  <div class="container mx-auto py-4 md:py-0 px-0 md:px-4 md:min-h-[400px]">
     <div
-      class="milestone-contant w-full sm:w-[40%] min-h-[350px] p-10 relative bg-white flex flex-col justify-center"
+      class="milestone-contant w-full sm:w-[40%] ml-auto mr-auto md:ml-0 relative flex flex-col justify-center h-full text-center md:text-left"
     >
       <h2
-        class="text-[28px] md:text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text"
+        class="text-[28px] md:text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text py-4 md:py-0"
       >
-        Vivriti Think Tank
+        Borrow from<br/>
+Vivriti Capital Limited
       </h2>
-      <p class="text-black text-[17px] font-light mb-6">
-        Explore our insights and analyses to guide mid-market enterprises toward
-        smarter growth and strategic success.
-      </p>
+      <div class="my-5 border-b border-dashed border-[#F58220]"></div>
+      <img src={LogoShape.src} alt="Vivrithi" class="w-[250px] h-auto mx-auto md:mx-0" />
     </div>
+    
   </div>
   <div
-    class="w-1/2 shrink-0 bg-[url(/blogbg.png)] bg-cover bg-center min-h-[400px] object-cover flex items-center flex-col justify-center overflow-hidden milstone-overlay items-end p-10"
+    class="w-full md:w-1/2 shrink-0 bg-[url(/borrowvcl.png)] bg-cover bg-center min-h-[400px] object-cover flex items-center flex-col justify-center overflow-hidden items-end p-10 md:absolute right-0"
   >
   </div>
 </div>
