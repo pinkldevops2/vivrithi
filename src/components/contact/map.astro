@@ -1,0 +1,188 @@
+    <div class="py-[70px] overflow-hidden">
+        <div class="map_holder">
+    	<img src="image 841.png" class="blink-dots" alt="Blinking Dotted Map">
+        <div class="address_block_1">
+        	<a href="#"></a>
+            <span class="place_label">Lorem Ipsum Dolor</span>
+            <img src="Rectangle 6386.png" class="office_photo" />
+        </div>
+        
+        
+        <div class="address_block_2">
+        	<a href="#"></a>
+            <span class="place_label">Lorem Ipsum Dolor</span>
+            <img src="Rectangle 6386.png" class="office_photo" />
+        </div>
+        
+        
+        <div class="address_block_3">
+        	<a href="#"></a>
+            <span class="place_label">Lorem Ipsum Dolor</span>
+            <img src="Rectangle 6386.png" class="office_photo" />
+        </div>
+    </div>
+    </div>
+    <style>
+    /* Blinking animation */
+    .blink-dots {
+        animation: blink 1.3s infinite ease-in-out;
+		width:583px;
+		height:658px;
+    }
+	.map_holder{
+		width:583px;
+		height:658px;
+		margin: auto;
+		position:relative;
+	}
+	.address_block_1 a{
+		width:65px;
+		height:65px;
+		display:block;
+    	background-position: center center;
+		background-image:url('Group.png');
+		background-repeat:no-repeat;
+		transition:all linear 0.3s;
+		position: absolute;
+		right: -65px;
+		top: -32.5px;
+	}
+	.address_block_1 a:hover{
+		background-size: cover;
+		background-image:url('Group 1 (31).png');
+	}
+	.address_block_1{
+	    position: absolute;
+		top: 258px;
+		left: -222px;
+		width: 340px;
+		display: flex;
+		flex-direction: row-reverse;
+		border-top: 1px solid #000;
+		border-left: 1px solid #000;
+		min-height: 60px;
+	}
+	.address_block_1 .office_photo{
+		position: absolute;
+		width: 288px;
+		left: -144px;
+		top: 70px;
+		opacity:0;
+		transition:all linear 0.3s;
+	}
+	.address_block_1:hover .office_photo{
+		opacity:1;
+		top: 111px;
+	}
+	.address_block_1 .place_label{
+		position: absolute;
+        width: 180px;
+        text-align: center;
+        left: -90px;
+        top: 80px;
+	}
+	
+	
+	
+	
+	.address_block_2{
+	    position: absolute;
+		bottom: 100px;
+    	left: 199px;
+		width: 280px;
+		display: flex;
+		flex-direction: row;
+		border-top: 1px solid #000;
+		border-right: 1px solid #000;
+		min-height: 60px;
+        z-index: 9;
+	}
+	.address_block_2 a{
+		width:65px;
+		height:65px;
+		display:block;
+    	background-position: center center;
+		background-image:url('Group.png');
+		background-repeat:no-repeat;
+		transition:all linear 0.3s;
+		position: absolute;
+		left: -65px;
+		top: -32.5px;
+	}
+	.address_block_2 a:hover{
+		background-size: cover;
+		background-image:url('Group 1 (31).png');
+	}
+	.address_block_2 .office_photo{
+		position: absolute;
+		width: 288px;
+		right: -144px;
+		top: 70px;
+		opacity:0;
+		transition:all linear 0.3s;
+	}
+	.address_block_2:hover .office_photo{
+		opacity:1;
+		top: 111px;
+	}
+	.address_block_2 .place_label{
+		position: absolute;
+		width: 180px;
+		right: -90px;
+        text-align: center;
+		top: 80px;
+	}
+	
+	
+	.address_block_3{
+	    position: absolute;
+		top: 300px;
+		left: 350px;
+		width: 280px;
+		display: flex;
+		flex-direction: row;
+		border-bottom: 1px solid #000;
+		border-right: 1px solid #000;
+		min-height: 60px;
+	}
+	.address_block_3 a{
+		width:65px;
+		height:65px;
+		display:block;
+    	background-position: center center;
+		background-image:url('Group.png');
+		background-repeat:no-repeat;
+		transition:all linear 0.3s;
+		position: absolute;
+		left: -65px;
+		bottom: -32.5px;
+	}
+	.address_block_3 a:hover{
+		background-size: cover;
+		background-image:url('Group 1 (31).png');
+	}
+	.address_block_3 .office_photo{
+		position: absolute;
+		width: 288px;
+		right: -144px;
+		bottom: 70px;
+		opacity:0;
+		transition:all linear 0.3s;
+	}
+	.address_block_3:hover .office_photo{
+		opacity:1;
+		bottom: 111px;
+	}
+	.address_block_3 .place_label{
+		position: absolute;
+		width: 180px;
+		right: -90px;
+        text-align: center;
+		bottom: 80px;
+	}
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0.3; }
+        100% { opacity: 1; }
+    }
+</style>
