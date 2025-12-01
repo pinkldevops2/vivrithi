@@ -4,212 +4,259 @@ import LogoShape from "../../../public/logowhite.svg";
 
 <div class="w-full xl:px-0 md:px-[40px] md:py-[70px] py-[40px] px-[20px]">
   <div class="container mx-auto">
+
+    <!-- Heading -->
     <div class="flex flex-col md:flex-row justify-between md:gap-30">
-      <h2
-        class="text-[28px] md:text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text w-full md:w-4/12"
-      >
-        ​​Flexible financing to power corporate growth
+      <h2 class="text-[28px] md:text-[35px] font-heading leading-[120%] mb-4 gradient-text w-full md:w-4/12">
+        Flexible financing to power corporate growth
       </h2>
-      <p data-reveal class="fade-up font-normal text-[17px] w-full md:w-8/12">
-        At Vivriti Capital Limited (VCL), we provide a full suite of financing
-        solutions for mid-market corporates, designed to support growth,
-        operational efficiency, and long-term ambitions. Our products are
-        tailored to your unique needs, combining competitive rates, flexible
-        terms, and expert structuring to help you scale with confidence.
+      <p class="font-normal text-[17px] w-full md:w-8/12">
+        At Vivriti Capital Limited (VCL), we provide a full suite of financing solutions for mid-market corporates.
       </p>
     </div>
 
-    <div
-      class="flex flex-col md:flex-row w-full items-baseline overflow-hidden"
-    >
-      <div class="flex md:w-2/4 items-end">
-        <div class="pt-8 sm:pt-0">
-          <button
-            class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium active-tab w-full"
-          >
-            Term loan
-          </button>
+    <!-- MOBILE ACCORDION -->
+    <div class="md:hidden mt-6 space-y-4">
 
-          <button
-            class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full"
-          >
-            Working capital
-          </button>
-
-          <button
-            class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full"
-          >
-            Leasing
-          </button>
-
-          <button
-            class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full"
-          >
-            Supply Chain Financing
-          </button>
-
-          <button
-            class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full"
-          >
-            Factoring
-          </button>
-        </div>
-        <div class="w-full md:block hidden">
-          <img
-            src={LogoShape.src}
-            alt="Vivrithi"
-            class="max-w-[350px] h-auto"
-          />
+      <!-- Accordion Item 1 -->
+      <div class="accordion rounded">
+        <button class="acc-btn w-full py-4 px-4 flex justify-between items-center text-[#F58220] font-medium text-[16px]">
+          Term Loan
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path d="M0.707 0.707L7.707 7.707L14.707 0.707" stroke="#666" stroke-width="2"/>
+            </svg>
+          </span>
+        </button>
+        <div class="acc-content p-5 bg-[#F8F8F8]">
+          <p class="mb-4">We provide financing to help mid-market enterprises scale efficiently.</p>
+          <p><strong>Tenor:</strong> 1 to 5 years</p>
         </div>
       </div>
 
-      <div class="w-full md:w-2/4 p-0 md:p-6">
-        <!------card 1 -->
-        <div
-          class="corporatetab-content opacity-100 translate-y-0 bg-[#F8F8F8] p-10 border-1 border-dashed border-[#F58220] transition-all duration-500 ease-in-out"
-        >
-          <h2 class="text-[#1B1B1B] text-[17px] font-semibold mb-6">
-            Term loan
-          </h2>
-          <p data-reveal class="fade-up font-normal w-full mb-8">
-            We provide a comprehensive suite of financing options to help
-            mid-market enterprises grow, manage cashflows, and scale
-            efficiently. Each solution is designed with flexibility,
-            transparency, and speed in mind.
-          </p>
-          <div class="leading-relaxed flex flex-col sm:flex-row mb-4">
-            <p class="text-[#1B1B1B] text-[17px] uppercase min-w-2/6">Tenor:</p>
+      <!-- Accordion Item 2 -->
+      <div class="accordion rounded">
+        <button class="acc-btn w-full py-4 px-4 flex justify-between items-center text-[#F58220] font-medium text-[16px]">
+          Working Capital
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path d="M0.707 0.707L7.707 7.707L14.707 0.707" stroke="#666" stroke-width="2"/>
+            </svg>
+          </span>
+        </button>
+        <div class="acc-content p-5 bg-[#F8F8F8]">
+          <p class="mb-4">Keep operations smooth and uninterrupted.</p>
+          <p><strong>Tenor:</strong> 3 to 12 months</p>
+        </div>
+      </div>
 
-            <p class="text-[#1B1B1B] text-[17px] font-semibold">1 to 5 years</p>
-          </div>
+      <!-- Accordion Item 3 -->
+      <div class="accordion rounded">
+        <button class="acc-btn w-full py-4 px-4 flex justify-between items-center text-[#F58220] font-medium text-[16px]">
+          Leasing
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path d="M0.707 0.707L7.707 7.707L14.707 0.707" stroke="#666" stroke-width="2"/>
+            </svg>
+          </span>
+        </button>
+        <div class="acc-content p-5 bg-[#F8F8F8]">
+          <p class="mb-4">Acquire equipment without upfront cost.</p>
+          <p><strong>Tenor:</strong> 1 to 4 years</p>
+        </div>
+      </div>
+
+      <!-- Accordion Item 4 -->
+      <div class="accordion rounded">
+        <button class="acc-btn w-full py-4 px-4 flex justify-between items-center text-[#F58220] font-medium text-[16px]">
+          Supply Chain Financing
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path d="M0.707 0.707L7.707 7.707L14.707 0.707" stroke="#666" stroke-width="2"/>
+            </svg>
+          </span>
+        </button>
+        <div class="acc-content p-5 bg-[#F8F8F8]">
+          <p class="mb-4">Optimise supply-chain cash flow.</p>
+          <p><strong>Tenor:</strong> 1 to 6 months</p>
+        </div>
+      </div>
+
+      <!-- Accordion Item 5 -->
+      <div class="accordion rounded">
+        <button class="acc-btn w-full py-4 px-4 flex justify-between items-center text-[#F58220] font-medium text-[16px]">
+          Factoring
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path d="M0.707 0.707L7.707 7.707L14.707 0.707" stroke="#666" stroke-width="2"/>
+            </svg>
+          </span>
+        </button>
+        <div class="acc-content p-5 bg-[#F8F8F8]">
+          <p class="mb-4">Convert receivables into immediate cash.</p>
+          <p><strong>Tenor:</strong> 1 to 6 months</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DESKTOP TABS -->
+    <div class="hidden md:flex flex-col md:flex-row w-full items-baseline overflow-hidden mt-10">
+      <div class="flex md:w-2/4 items-end">
+        <div>
+          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium active-tab w-full">Term loan</button>
+          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full">Working capital</button>
+          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full">Leasing</button>
+          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full">Supply Chain Financing</button>
+          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full">Factoring</button>
         </div>
 
-        <!------card 2 -->
-        <div
-          class="corporatetab-content hidden opacity-0 -translate-y-4 transition-all duration-500 ease-in-out bg-[#F8F8F8] p-10 border-1 border-dashed border-[#F58220]"
-        >
-          <h2 class="text-[#1B1B1B] text-[17px] font-semibold mb-6">
-            Working Capital
-          </h2>
-          <p data-reveal class="fade-up font-normal w-full mb-8">
-            Keep operations smooth and growth uninterrupted. Our working capital
-            solutions cover daily expenses and bridge funding gaps, ensuring
-            your business runs efficiently.
-          </p>
-          <div class="leading-relaxed flex flex-col sm:flex-row mb-4">
-            <p class="text-[#1B1B1B] text-[17px] uppercase min-w-2/6">Tenor:</p>
+        <div class="w-full md:block hidden">
+          <img src={LogoShape.src} class="max-w-[350px] h-auto" />
+        </div>
+      </div>
 
-            <p class="text-[#1B1B1B] text-[17px] font-semibold">
-              3 to 12 months
-            </p>
-          </div>
+      <div class="w-full md:w-2/4 p-6">
+
+        <!-- Tab Content 1 -->
+        <div class="corporatetab-content bg-[#F8F8F8] p-10 border border-dashed border-[#F58220] opacity-100 translate-y-0">
+          <h2 class="font-semibold mb-6">Term loan</h2>
+          <p class="mb-8">We provide financial solutions for mid-market enterprises.</p>
+          <p><strong>Tenor:</strong> 1 to 5 years</p>
         </div>
 
-        <!------card 3 -->
-        <div
-          class="corporatetab-content hidden opacity-0 -translate-y-4 transition-all duration-500 ease-in-out bg-[#F8F8F8] p-10 border-1 border-dashed border-[#F58220]"
-        >
-          <h2 class="text-[#1B1B1B] text-[17px] font-semibold mb-6">Leasing</h2>
-          <p data-reveal class="fade-up font-normal w-full mb-8">
-            Acquire essential equipment, vehicles, or property without heavy
-            upfront costs. Our leasing options offer predictable monthly
-            payments while improving operational efficiency.
-          </p>
-          <div class="leading-relaxed flex flex-col sm:flex-row mb-4">
-            <p class="text-[#1B1B1B] text-[17px] uppercase min-w-2/6">Tenor:</p>
-
-            <p class="text-[#1B1B1B] text-[17px] font-semibold">1 to 4 years</p>
-          </div>
+        <!-- Tab Content 2 -->
+        <div class="corporatetab-content bg-[#F8F8F8] p-10 border border-dashed border-[#F58220] opacity-0 -translate-y-4 hidden">
+          <h2 class="font-semibold mb-6">Working Capital</h2>
+          <p class="mb-8">Ensure smooth daily operations.</p>
+          <p><strong>Tenor:</strong> 3 to 12 months</p>
         </div>
 
-        <!------card 4 -->
-        <div
-          class="corporatetab-content hidden opacity-0 -translate-y-4 transition-all duration-500 ease-in-out bg-[#F8F8F8] p-10 border-1 border-dashed border-[#F58220]"
-        >
-          <h2 class="text-[#1B1B1B] text-[17px] font-semibold mb-6">
-            Supply Chain Financing
-          </h2>
-          <p data-reveal class="fade-up font-normal w-full mb-8">
-            Optimise cash flow across your supply chain. From vendor payments to
-            sales and dealership cash flows, our solutions keep your operations
-            moving seamlessly.
-          </p>
-          <div class="leading-relaxed flex flex-col sm:flex-row mb-4">
-            <p class="text-[#1B1B1B] text-[17px] uppercase min-w-2/6">Tenor:</p>
-
-            <p class="text-[#1B1B1B] text-[17px] font-semibold">
-              1 to 6 months
-            </p>
-          </div>
+        <!-- Tab Content 3 -->
+        <div class="corporatetab-content bg-[#F8F8F8] p-10 border border-dashed border-[#F58220] opacity-0 -translate-y-4 hidden">
+          <h2 class="font-semibold mb-6">Leasing</h2>
+          <p class="mb-8">Acquire assets without heavy upfront investment.</p>
+          <p><strong>Tenor:</strong> 1 to 4 years</p>
         </div>
 
-        <!------card 5 -->
-
-        <div
-          class="corporatetab-content hidden opacity-0 -translate-y-4 transition-all duration-500 ease-in-out bg-[#F8F8F8] p-10 border-1 border-dashed border-[#F58220]"
-        >
-          <h2 class="text-[#1B1B1B] text-[17px] font-semibold mb-6">
-            Factoring
-          </h2>
-          <p data-reveal class="fade-up font-normal w-full mb-8">
-            Turn receivables into immediate cash. Our factoring services provide
-            quick working capital while we handle collections, streamlining your
-            accounts receivable process.
-          </p>
-          <div class="leading-relaxed flex flex-col sm:flex-row mb-4">
-            <p class="text-[#1B1B1B] text-[17px] uppercase min-w-2/6">Tenor:</p>
-
-            <p class="text-[#1B1B1B] text-[17px] font-semibold">
-              1 to 6 months
-            </p>
-          </div>
+        <!-- Tab Content 4 -->
+        <div class="corporatetab-content bg-[#F8F8F8] p-10 border border-dashed border-[#F58220] opacity-0 -translate-y-4 hidden">
+          <h2 class="font-semibold mb-6">Supply Chain Financing</h2>
+          <p class="mb-8">Enhance supply chain liquidity.</p>
+          <p><strong>Tenor:</strong> 1 to 6 months</p>
         </div>
+
+        <!-- Tab Content 5 -->
+        <div class="corporatetab-content bg-[#F8F8F8] p-10 border border-dashed border-[#F58220] opacity-0 -translate-y-4 hidden">
+          <h2 class="font-semibold mb-6">Factoring</h2>
+          <p class="mb-8">Turn receivables into immediate cash.</p>
+          <p><strong>Tenor:</strong> 1 to 6 months</p>
+        </div>
+
       </div>
     </div>
+
   </div>
 
-  <style>
-    button.active-tab {
-      background: linear-gradient(
-        32deg,
-        rgba(0, 1, 138, 1) 0,
-        rgba(59, 186, 226, 1) 100%
-      );
-      letter-spacing: 1px;
-      color: #fff;
-      width: fit-content;
+<style>
+/* MOBILE ACCORDION */
+.accordion {
+  border: 1px dashed #F58220;
+  border-radius: 6px;
+}
+.acc-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
+  opacity: 0;
+  border-top: 1px dashed #F58220;
+  padding: 0; /* remove all padding when closed */
+}
+.acc-content.open {
+  opacity: 1;
+  max-height: 500px;
+  padding: 1rem; /* restore padding when open */
+}
+.icon svg {
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+.rotate-up svg {
+  transform: rotate(-180deg);
+}
+
+/* DESKTOP TABS */
+.corporatetab-content {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* Active tab style */
+button.active-tab {
+  background: linear-gradient(32deg, rgba(0,1,138,1) 0, rgba(59,186,226,1) 100%);
+  color: white !important;
+}
+</style>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* -------------------- MOBILE ACCORDION -------------------- */
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach((acc, index) => {
+    const btn = acc.querySelector(".acc-btn");
+    const content = acc.querySelector(".acc-content");
+    const icon = acc.querySelector(".icon");
+
+    // Open first by default
+    if(index === 0) {
+      content.classList.add("open");
+      icon.classList.add("rotate-up");
     }
-  </style>
-  <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-      const corptabButtons = document.querySelectorAll(".corporatetab-btn");
-      const corptabContents = document.querySelectorAll(
-        ".corporatetab-content"
-      );
 
-      corptabButtons.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-          // Reset all buttons
-          corptabButtons.forEach((b) => b.classList.remove("active-tab"));
+    btn.addEventListener("click", () => {
+      const isOpen = content.classList.contains("open");
 
-          // Hide all content
-          corptabContents.forEach((c) => {
-            c.classList.add("hidden", "opacity-0", "-translate-y-4");
-            c.classList.remove("opacity-100", "translate-y-0");
-          });
-
-          // Activate clicked tab
-          btn.classList.add("active-tab");
-
-          // Show correct content
-          const activeContent = corptabContents[index];
-          activeContent.classList.remove("hidden");
-          setTimeout(() => {
-            activeContent.classList.remove("opacity-0", "-translate-y-4");
-            activeContent.classList.add("opacity-100", "translate-y-0");
-          }, 20);
-        });
+      // Close all others
+      accordions.forEach((other, i) => {
+        if (i !== index) {
+          other.querySelector(".acc-content").classList.remove("open");
+          other.querySelector(".icon").classList.remove("rotate-up");
+        }
       });
+
+      // Toggle current
+      content.classList.toggle("open");
+      icon.classList.toggle("rotate-up");
     });
-  </script>
-</div>
+  });
+
+  /* -------------------- DESKTOP TABS -------------------- */
+  const corptabButtons = document.querySelectorAll(".corporatetab-btn");
+  const corptabContents = document.querySelectorAll(".corporatetab-content");
+
+  corptabButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+
+      corptabButtons.forEach(b => b.classList.remove("active-tab"));
+
+      corptabContents.forEach(c => {
+        c.classList.add("opacity-0", "-translate-y-4");
+        c.classList.add("hidden");
+      });
+
+      btn.classList.add("active-tab");
+
+      const activeContent = corptabContents[index];
+      activeContent.classList.remove("hidden");
+
+      setTimeout(() => {
+        activeContent.classList.remove("opacity-0", "-translate-y-4");
+        activeContent.classList.add("opacity-100", "translate-y-0");
+      }, 20);
+    });
+  });
+
+});
+</script>
