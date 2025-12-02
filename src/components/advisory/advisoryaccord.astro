@@ -1,0 +1,178 @@
+---
+import LogoShape from "../../../public/Vivrithi_logo.svg";
+---
+
+<div class="w-full xl:px-0 md:px-[40px] md:pt-[70px] pt-[40px] px-[20px]">
+  <div class="container mx-auto">
+    <div
+      class="flex flex-col md:flex-row justify-between md:gap-30 mb-4 md:mb-20 md:px-4"
+    >
+      <h2
+        class="text-[28px] md:text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text w-full md:w-4/12"
+      >
+        Strategise and Scale
+      </h2>
+      <p data-reveal class="fade-up font-normal text-[17px] w-full md:w-8/12">
+        At Vivriti Next, we enable mid-market enterprises to turn ambition into
+        measurable growth. From unlocking capital and optimising financial
+        structures to managing risk and embedding sustainability, our solutions
+        are designed to empower every stage of your business.
+      </p>
+    </div>
+  </div>
+  <div class="container mx-auto">
+    <div
+      class="flex flex-col md:flex-row justify-between md:gap-30 mb-4 md:mb-20 md:px-4"
+    >
+      <div class="w-full md:w-9/12">
+        <div class="w-full">
+          <!-- Item 1 — OPEN BY DEFAULT -->
+          <div class="accordion-item accordion-active" id="box-1">
+            <button
+              class="w-full px-4 py-3 flex justify-between accordion-header gap-4"
+              data-target="item-1"
+              data-box="box-1"
+            >
+              <h2>Capital Raise</h2>
+              <h3 class="font-medium">
+                Connecting enterprises with the right investors
+              </h3>
+            </button>
+
+            <div
+              id="item-1"
+              class="overflow-hidden transition-all duration-300 px-4"
+              style="max-height: 200px;"
+            >
+              <a
+                href="/contact"
+                data-reveal
+                class="fade-up contact_cta contact_cta-wwhite contact_cta5 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition my-4 w-full py-3 px-8 justify-center"
+              >
+                <span data-text="Learn more" class="gradient-text"
+                  >Learn more</span
+                >
+                <img src={LogoShape.src} alt="Vivrithi" class="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          <!-- SEPARATOR -->
+          <div class="border-b border-dashed border-[#F58220] my-2"></div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item" id="box-2">
+            <button
+              class="w-full px-4 py-3 flex justify-between accordion-header gap-4"
+              data-target="item-2"
+              data-box="box-2"
+            >
+              <h2>Capital Raise</h2>
+              <h3 class="font-medium">
+                Connecting enterprises with the right investors
+              </h3>
+            </button>
+
+            <div
+              id="item-2"
+              class="overflow-hidden transition-all duration-300 px-4"
+              style="max-height: 0;"
+            >
+              <a
+                href="/contact"
+                data-reveal
+                class="fade-up contact_cta contact_cta-wwhite contact_cta5 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition my-4 w-full py-3 px-8 justify-center"
+              >
+                <span data-text="Learn more" class="gradient-text"
+                  >Learn more</span
+                >
+                <img src={LogoShape.src} alt="Vivrithi" class="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          <!-- SEPARATOR -->
+          <div class="border-b border-dashed border-[#F58220] my-2"></div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item" id="box-3">
+            <button
+              class="w-full px-4 py-3 flex justify-between accordion-header gap-4"
+              data-target="item-3"
+              data-box="box-3"
+            >
+              <h2>Capital Raise</h2>
+              <h3 class="font-medium">
+                Connecting enterprises with the right investors
+              </h3>
+            </button>
+
+            <div
+              id="item-3"
+              class="overflow-hidden transition-all duration-300 px-4"
+              style="max-height: 0;"
+            >
+               <a
+                href="/contact"
+                data-reveal
+                class="fade-up contact_cta contact_cta-wwhite contact_cta5 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition my-4 w-full py-3 px-8 justify-center"
+              >
+                <span data-text="Learn more" class="gradient-text"
+                  >Learn more</span
+                >
+                <img src={LogoShape.src} alt="Vivrithi" class="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-3/12"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .accordion-active {
+    color: #fff !important;
+    background: linear-gradient(
+      32deg,
+      rgba(59, 186, 226, 1) 0%,
+      rgba(0, 1, 138, 1) 100%
+    ) !important;
+  }
+  .contact_cta:hover::before {
+    width: 100%;
+  }
+</style>
+
+<!-- JS for Toggle -->
+<script>
+  document.querySelectorAll(".accordion-header").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.dataset.target;
+      const boxId = btn.dataset.box;
+
+      const content = document.getElementById(targetId);
+      const box = document.getElementById(boxId);
+
+      const isOpen =
+        content.style.maxHeight && content.style.maxHeight !== "0px";
+
+      // Close all
+      document.querySelectorAll(".accordion-item").forEach((item) => {
+        item.classList.remove("accordion-active");
+      });
+      document
+        .querySelectorAll(".accordion-item div[id^='item-']")
+        .forEach((el) => {
+          el.style.maxHeight = 0;
+        });
+
+      // Open clicked item
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + "px";
+        box.classList.add("accordion-active");
+      }
+    });
+  });
+</script>

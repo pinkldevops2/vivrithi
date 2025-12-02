@@ -30,52 +30,74 @@ let active = 0;
 ---
 
 <div class="container px-4 mx-auto py-[30px] sm:py-[70px]">
-  
-  <!-- Tab Headers -->
+
+  <!-- DESKTOP TABS -->
   <div
     id="tabs"
-    class="flex gap-4 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing 
-           border border-dashed border-[#F58220] p-2"
+    class="hidden md:flex gap-4 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing border border-dashed border-[#F58220] p-2"
   >
-    {
-      tabs.map((tab, index) => (
-        <button
-          class={`whitespace-nowrap px-4 py-3 transition
-                  ${active === index ? "gradient_blue_bg text-white" : "bg-white gradient-text"}`}
-          onclick={`document.dispatchEvent(new CustomEvent('set-tab', { detail: ${index} }))`}
-        >
-          {tab.label}
-        </button>
-      ))
-    }
+    {tabs.map((tab, index) => (
+      <button
+        class={`whitespace-nowrap px-4 py-3 transition
+                ${active === index ? "gradient_blue_bg text-white" : "bg-white gradient-text"}`}
+        onclick={`document.dispatchEvent(new CustomEvent('set-tab', { detail: ${index} }))`}
+      >
+        {tab.label}
+      </button>
+    ))}
   </div>
 
-  <!-- Tab Content -->
-  <div id="tab-content" class="mt-4 bg-white pt-[0px] sm:pt-[60px]">
+  <!-- DESKTOP TAB CONTENT -->
+  <div id="tab-content" class="hidden md:block mt-4 bg-white pt-[0px] sm:pt-[60px]">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-15 items-start">
-      
-      <!-- LEFT COLUMN: IMAGE -->
       <img src={tabs[active].img} alt="" class="w-full h-auto" />
-
-      <!-- RIGHT COLUMN: TEXT -->
       <div class="tab_contents">
         <h2 class="mb-3 gradient-text text-[35px] leading-[40px] font-poppins">{tabs[active].title}</h2>
-
-        <!-- render HTML text -->
         <div class="text-gray-700 leading-relaxed tab_contents space-y-3" set:html={tabs[active].text}></div>
       </div>
     </div>
   </div>
 
+  <!-- MOBILE ACCORDION -->
+  <div id="mobile-accordion" class="md:hidden mt-6 space-y-4">
+    {tabs.map((tab, i) => (
+      <div class="border border-[#F58220] rounded" key={i}>
+        <button
+          class="w-full flex justify-between items-center px-4 py-3 gradient-text font-semibold"
+          data-accordion-btn={i}
+        >
+          {tab.label}
+          <!-- SVG ARROW -->
+          <svg
+            class="w-4 h-3 transition-transform duration-200"
+            data-arrow={i}
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="10"
+            viewBox="0 0 16 10"
+            fill="none"
+          >
+            <path d="M0.707031 0.707031L7.70703 7.70703L14.707 0.707031" stroke="#666666" stroke-width="2"/>
+          </svg>
+        </button>
+        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300" data-accordion-content={i}>
+          <div class="p-4 space-y-3">
+            <img src={tab.img} class="w-full h-auto mb-3" />
+            <h3 class="gradient-text text-[28px] font-poppins">{tab.title}</h3>
+            <div class="text-gray-700 leading-relaxed" set:html={tab.text}></div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
 </div>
 
-
-<!-- JS with access to frontmatter tabs -->
 <script define:vars={{ tabs }}>
+  // Desktop Tabs JS (unchanged)
   document.addEventListener("set-tab", (e) => {
     const index = e.detail;
 
-    // Update header tab styles
     document.querySelectorAll("#tabs button").forEach((btn, i) => {
       if (i === index) {
         btn.classList.add("gradient_blue_bg", "text-white");
@@ -86,7 +108,6 @@ let active = 0;
       }
     });
 
-    // Update main content
     document.getElementById("tab-content").innerHTML = `
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-15 items-start">
         <img src="${tabs[index].img}" class="w-full h-auto" />
@@ -98,7 +119,6 @@ let active = 0;
         </div>
       </div>`;
   });
-
 
   /* -------------------------------
      DRAGGABLE TABS (mouse + touch)
@@ -122,7 +142,6 @@ let active = 0;
     tabContainer.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
 
-  // Touch support
   tabContainer.addEventListener("touchstart", (e) => {
     isDown = true;
     startX = e.touches[0].pageX - tabContainer.offsetLeft;
@@ -134,21 +153,54 @@ let active = 0;
     const x = e.touches[0].pageX - tabContainer.offsetLeft;
     tabContainer.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
+
+  // MOBILE ACCORDION JS
+  const accordionBtns = document.querySelectorAll("[data-accordion-btn]");
+  const accordionContents = document.querySelectorAll(".accordion-content");
+  const accordionArrows = document.querySelectorAll("[data-arrow]");
+
+  accordionBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const index = btn.dataset.accordionBtn;
+      const content = document.querySelector(`[data-accordion-content="${index}"]`);
+      const arrow = document.querySelector(`[data-arrow="${index}"]`);
+      const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+      // Close all
+      accordionContents.forEach(c => c.style.maxHeight = "0px");
+      accordionArrows.forEach(a => a.style.transform = "rotate(0deg)");
+
+      // Open clicked
+      if(!isOpen){
+        content.style.maxHeight = content.scrollHeight + "px";
+        arrow.style.transform = "rotate(180deg)";
+      }
+    });
+  });
+
+  // OPEN FIRST ACCORDION ON PAGE LOAD
+  window.addEventListener("DOMContentLoaded", () => {
+    if(accordionContents.length > 0){
+      accordionContents[0].style.maxHeight = accordionContents[0].scrollHeight + "px";
+      accordionArrows[0].style.transform = "rotate(180deg)";
+    }
+  });
 </script>
 
-
 <style>
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    scrollbar-width: none;
-  }
-  #tabs button {
-    flex: 1;
-  }
-  .gradient_blue_bg{
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+
+  #tabs button { flex: 1; }
+
+  .gradient_blue_bg {
     background: #3BBAE2;
     background: linear-gradient(337deg, rgba(59, 186, 226, 1) 0%, rgba(0, 1, 138, 1) 100%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #3BBAE2, #00018A);
+    -webkit-background-clip: text;
+    color: transparent;
   }
 </style>
