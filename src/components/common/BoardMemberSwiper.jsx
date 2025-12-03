@@ -12,6 +12,11 @@ export default function DrivingImpactSwiper({ slides }) {
 
   return (
     <div className="container mx-auto  relative w-full">
+      <style>{`
+        .text-description{
+          min-height:50px;
+        }
+      `}</style>
       {/* Header and Counter */}
       <div className="flex justify-end flex-col md:flex-row absolute bottom-[-45px] left-1/2 -translate-x-1/2 transform  md:relative md:left-[initial] md:translate-x-[initial] md:bottom-[initial]">
         {/* Navigation */}
