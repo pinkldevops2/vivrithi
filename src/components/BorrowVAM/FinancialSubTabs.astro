@@ -172,6 +172,19 @@ button.active-tab {
     position: relative;
     white-space: nowrap;
 }
+@media (max-width: 768px) {
+button.active-tab, button {
+   left: 0px;
+   border-radius: 5px 5px 0 0;
+   background: transparent;
+   color:#F58220!important;
+}
+button:not(.active-tab):hover {
+   left: 0px;
+    background: transparent;
+     color:#F58220!important;
+}
+}
 </style>
 
 <script is:inline>
