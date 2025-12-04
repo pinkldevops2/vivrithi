@@ -65,6 +65,17 @@ import VAMAImpactByNumber from "../vam/ImpactByNumber.astro";
     -webkit-background-clip: initial;
     -webkit-text-fill-color: initial
   }
+  button:not(.tabactive):hover {
+    color: #fff !important;
+    background: linear-gradient(
+      32deg,
+      rgba(59, 186, 226, 1) 0%,
+      rgba(0, 1, 138, 1) 100%
+    );
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    cursor: pointer;
+  }
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
