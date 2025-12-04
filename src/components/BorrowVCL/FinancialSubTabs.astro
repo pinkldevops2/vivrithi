@@ -79,7 +79,7 @@ import LogoShape from "../../../public/logowhite.svg";
     </div>
 
     <!-- DESKTOP TABS -->
-    <div class="hidden md:flex flex-col md:flex-row w-full items-start justify-between overflow-hidden mt-10 gap-5">
+    <div class="hidden md:flex flex-col md:flex-row w-full items-start justify-between mt-10 gap-5">
       <div class="flex md:w-5/12 items-start">
         <div class="pt-8 sm:pt-0 relative -left-[13px] max-w-[240px] flex flex-col gap-y-2">
           <button class="inst-tab-btn  py-2 px-7 text-left text-[14px] text-[#F58220] font-medium active-tab block size-fit  uppercase">Term Loan</button>
@@ -173,14 +173,14 @@ button:not(.active-tab):hover {
     -webkit-background-clip: initial;
     -webkit-text-fill-color: initial;
     position: relative;
-    left:15px;
+    left:-15px;
     cursor: pointer;
   }
 /* Active tab style */
 button.active-tab {
   background: linear-gradient(32deg, rgba(0,1,138,1) 0, rgba(59,186,226,1) 100%);
   color: white !important;
-  left: 15px;
+  left: -15px;
     position: relative;
     white-space: nowrap;
 }
