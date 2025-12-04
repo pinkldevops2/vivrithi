@@ -114,34 +114,33 @@ flexible institutional capital
 
 <style>
 /* MOBILE ACCORDION */
-.accordion {
-  border: 1px dashed #F58220;
+.inst-accordion {
   border-radius: 6px;
+  overflow: hidden;
 }
-.acc-content {
+.inst-acc-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
   opacity: 0;
+  padding: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
   border-top: 1px dashed #F58220;
-  padding: 0; /* remove all padding when closed */
 }
-.acc-content.open {
+.inst-acc-content.open {
   opacity: 1;
-  max-height: 500px;
-  padding: 1rem; /* restore padding when open */
+  max-height: 1000px;
+  padding: 1rem;
 }
-.icon svg {
-  transform: rotate(0deg);
-  transform-origin: center;
+.inst-acc-btn .icon svg {
   transition: transform 0.35s ease;
+  transform-origin: center;
 }
-.rotate-up svg {
+.inst-acc-btn .icon.rotate-up svg {
   transform: rotate(-180deg);
 }
 
 /* DESKTOP TABS */
-.corporatetab-content {
+.inst-tab-content {
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 button{
@@ -161,14 +160,12 @@ button:not(.active-tab):hover {
     position: relative;
     left:-15px;
     cursor: pointer;
-    
   }
-
 /* Active tab style */
 button.active-tab {
   background: linear-gradient(32deg, rgba(0,1,138,1) 0, rgba(59,186,226,1) 100%);
   color: white !important;
-   left: -15px;
+  left: -15px;
     position: relative;
     white-space: nowrap;
 }
