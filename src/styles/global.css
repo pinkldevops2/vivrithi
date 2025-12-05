@@ -90,6 +90,21 @@ body{
 .left-padding-zero{
   padding-left: 0px!important;
 }
+.hovergradient{
+  transition: all linear 0.5s;
+}
+.hovergradient:hover{
+  transition: all linear 0.5s;
+  color: #fff;
+  background: #01018A;
+  background: linear-gradient(90deg, rgba(1, 1, 138, 1) 0%, rgba(57, 181, 223, 1) 100%);
+}
+.hovergradient:hover h2{
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+}
 /*banner*/
     :root {
       --speed: 500ms;

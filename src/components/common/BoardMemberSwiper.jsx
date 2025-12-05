@@ -11,7 +11,7 @@ export default function DrivingImpactSwiper({ slides }) {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   return (
-    <div className="container mx-auto  relative w-full">
+    <div className="container mx-auto  relative w-full py-4 px-2">
       <style>{`
         .text-description{
           min-height:50px;
@@ -85,7 +85,7 @@ export default function DrivingImpactSwiper({ slides }) {
                 <img
                   src={slide.img}
                   alt={slide.title}
-                  className="absolute inset-0 w-full h-full object-cover bg-[#F0F0F0]"
+                  className="absolute inset-0 w-full h-full object-cover object-top bg-[#F0F0F0]"
                 />
 
                 <div className="absolute inset-0 bg-linear-to-t from-[#00000075] to-[#6361ff00]"></div>
