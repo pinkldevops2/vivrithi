@@ -43,10 +43,19 @@ export default function AdvisorySwiper({ slides }) {
         .swiper-button-prev-custom:hover svg path {
           fill: transparent;
         }
+          
+          @media (min-width: 768px) {
+          
+          .slider-button{
+          left: calc(50% + 164px);
+          transform: translateX(-50%);
+          }
+             
+          }
       `}</style>
 
       {/* Navigation + Titles */}
-      <div className="flex justify-end flex-col md:flex-row absolute bottom-[-100px] md:bottom-[-85px] left-1/2 -translate-x-1/2 transform">
+      <div className="slider-button flex justify-end flex-col md:flex-row absolute bottom-[-100px] md:bottom-[-85px] left-1/2 -translate-x-1/2 transform">
         <div className="flex justify-end mb-5 md:items-center items-end gap-4 md:gap-20">
           {/* Previous */}
           <div>
