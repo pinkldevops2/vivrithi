@@ -43,33 +43,37 @@
 <!-- Animation Script -->
 <script is:client>
   // wait a frame to ensure the SVG is rendered
-  document.addEventListener("DOMContentLoaded", () => {
-        const paths = document.querySelectorAll("#animatedSvg path");
+ document.addEventListener("DOMContentLoaded", () => {
 
-        const tl = gsap.timeline({
-          repeat: -1,
-          repeatDelay: 0.6
-        });
+  const paths = document.querySelectorAll("#animatedSvg path");
 
-        paths.forEach((path, i) => {
-          const length = path.getTotalLength();
-          const originalDash = path.getAttribute("stroke-dasharray");
+  const tl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 1 // delay between repeats
+  });
 
-          gsap.set(path, {
-            strokeDasharray: length + " " + length,
-            strokeDashoffset: length
-          });
+  paths.forEach((path, i) => {
 
-          tl.to(path, {
-            strokeDashoffset: 0,
-            duration: 2,
-            ease: "power2.inOut",
-          }, i * 0.4);
+    const length = path.getTotalLength();
+    const originalDash = path.getAttribute("stroke-dasharray");
 
-          tl.to(path, {
-            strokeDasharray: originalDash,
-            duration: 0.2
-          });
-        });
-      });
+    gsap.set(path, {
+      strokeDasharray: length + " " + length,
+      strokeDashoffset: length
+    });
+
+    // Slower draw animation
+    tl.to(path, {
+      strokeDashoffset: 0,
+      duration: 4,   // slower draw (was 2)
+      ease: "power2.inOut",
+    }, i * 1.5);     // stagger start a bit more for effect
+
+    tl.to(path, {
+      strokeDasharray: originalDash,
+      duration: 1.2
+    });
+  });
+
+});
 </script>
