@@ -131,14 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!categoriesUl) return;
 
     let html = `
-  <li class="py-2 cursor-pointer rounded mb-2 ${activeCategory === "all" ? "bg-gradient-to-r " : ""}" data-slug="all">
+  <li class="py-2 cursor-pointer mb-2 ${activeCategory === "all" ? "bg-gradient-to-r " : ""}" data-slug="all">
     <a>All</a>
   </li>
 `;
 
 edges.forEach(({ node }) => {
   html += `
-    <li class="py-2 cursor-pointer rounded mb-2 ${activeCategory === node.slug ? "bg-gradient-to-r" : ""}" data-slug="${node.slug}">
+    <li class="py-2 cursor-pointer mb-2 ${activeCategory === node.slug ? "bg-gradient-to-r" : ""}" data-slug="${node.slug}">
       <a>${node.name}</a>
     </li>
   `;
