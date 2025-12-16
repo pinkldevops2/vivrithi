@@ -31,15 +31,6 @@ body{
 .contact_cta.contact_cta-wwhite{
   background: #fff;
 }
-.logoanimation::after{
-  content: '';
-  width: 60px;
-  height: 24px;
-  position: absolute;
-  background-color: #fff;
-  bottom: 21px;
-  right: -34px;
-}
 .gradient-text {
   background: linear-gradient(90deg, #00018A, #3BBAE2);
   -webkit-background-clip: text;
