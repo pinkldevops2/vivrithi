@@ -1,10 +1,12 @@
 import LogoShape from "../../../public/Vivrithi_logo.svg";
 
-export default function ContactButton({ label = "GET IN TOUCH", href = "/" }) {
+export default function ContactButton({ label = "GET IN TOUCH", href = "/", width = "" }) {
   return (
     <a
       href={href}
-      className="contact_cta getintouch-fix flex items-center gap-2 text-[14px] text-white uppercase hover:text-blue-600 transition mb-2 right-0"
+      className={`contact_cta getintouch-fix flex items-center gap-2 text-[14px] 
+              text-white uppercase hover:text-blue-600 transition mb-2 right-0 
+              w-[${width}px]`}
     >
       <span data-text={label}>{label}</span>
       <img src={LogoShape.src} alt="Vivrithi" className="w-5 h-5" />

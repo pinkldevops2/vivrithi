@@ -1,6 +1,6 @@
 ---
-import LogoShape from "../../../public/logowhite.svg";
-import LogoAnimation from "../../components/common/logoglow.astro";
+//import LogoShape from "../../../public/logowhite.svg";
+import LogoAnimation from "../../components/common/logoglow2.astro";
 ---
 
 <div class="w-full md:py-[70px] py-[40px]">
@@ -12,7 +12,7 @@ import LogoAnimation from "../../components/common/logoglow.astro";
         Tailored lending solutions for institutional needs
       </h2>
       <p class="font-normal text-[17px] w-full md:w-8/12 max-w-[674px]">
-       Vivriti Capital Limited empowers small and mid-sized financial institutions with financing solutions that enhance liquidity, streamline balance sheets, and support sustainable expansion. Our flexible, competitively priced offerings are crafted to meet the specific needs and challenges of today’s financial organizations.
+       Vivriti Capital empowers small and mid-sized financial institutions with financing solutions that enhance liquidity, streamline balance sheets, and support sustainable expansion. Our flexible, competitively priced offerings are crafted to meet the specific needs and challenges of today’s financial organizations.
       </p>
     </div>
 
@@ -88,7 +88,7 @@ import LogoAnimation from "../../components/common/logoglow.astro";
           <button class="inst-tab-btn  py-2 px-7 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Co-lending</button>
         </div>
         <div class="w-full md:flex justify-start hidden ">
-          <img src={LogoShape.src} class="max-w-[300px] w-full h-auto" />
+          <LogoAnimation />
         </div>
       </div>
 
@@ -183,7 +183,6 @@ button.active-tab {
   color: white !important;
   left: -15px;
     position: relative;
-    white-space: nowrap;
 }
 @media (max-width: 768px) {
 button.active-tab, button {

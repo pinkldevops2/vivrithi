@@ -25,20 +25,20 @@ import LogoAnimation from '../common/LogoAnim.astro';
   <div class="border-b-1 border-solid border-[#D4D4D4] relative">
     <h3 class=" text-[18px] uppercase text-[#1B1B1B] mb-2 pr-[130px]">assets under management</h3>
     <div class="bar bg-[#D8F1F9] flex flex-col md:flex-row  justify-between" style="--target-width:55%">
-      <h2 class="text-[21px] md:text-[21px] font-heading text-[#1B1B1B] absolute right-0 top-0 md:top-[14px]" data-target="9100">₹0+ cr</h2>
+      <h2 class="text-[21px] md:text-[21px] font-heading text-[#1B1B1B] absolute right-0 top-0 md:top-[14px]" data-target="10100">₹0+</h2>
     </div>
   </div>
 
   <div class="border-b-1 border-solid border-[#D4D4D4] relative  mt-[30px]">
     <h3 class=" text-[18px] uppercase text-[#1B1B1B] mb-2 pr-[130px]">finance enabled</h3>
     <div class="bar bg-[#DDDDDD] flex flex-col md:flex-row  justify-between " style="--target-width:70%">
-      <h2 class="text-[21px] md:text-[21px] font-heading text-[#1B1B1B] absolute right-0 top-0 md:top-[14px]" data-target="47500">₹0+ cr</h2>
+      <h2 class="text-[21px] md:text-[21px] font-heading text-[#1B1B1B] absolute right-0 top-0 md:top-[14px]" data-target="51500">₹0+</h2>
     </div>
   </div>
   <div class="border-b-1 border-solid border-[#D4D4D4] relative mt-[30px]">
     <h3 class=" text-[18px] uppercase text-[#1B1B1B] mb-2 pr-[130px]">mid-market enterprises supported</h3>
     <div class="bar bg-[#00018A] flex flex-col md:flex-row  justify-between" style="--target-width:35%">
-      <h2 class="text-[21px] md:text-[21px] font-heading text-[#1B1B1B] absolute right-0 top-0 md:top-[14px]" data-target="500">0+</h2>
+      <h2 class="text-[21px] md:text-[21px] font-heading text-[#1B1B1B] absolute right-0 top-0 md:top-[14px]" data-target="525">0+</h2>
     </div>
   </div>
 
@@ -147,7 +147,7 @@ import LogoAnimation from '../common/LogoAnim.astro';
           clearInterval(timer);
         }
         if (element.textContent.includes("₹")) {
-          element.textContent = "₹" + Math.floor(start).toLocaleString() + "+ cr";
+          element.textContent = "₹" + Math.floor(start).toLocaleString() + "+";
         } else {
           element.textContent = Math.floor(start) + "+";
         }
