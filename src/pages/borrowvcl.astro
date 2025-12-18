@@ -9,10 +9,16 @@ import ContactButton from '../components/common/HomeGetInTouch.jsx';
 
 ---
 <Layout>
-<ContactButton label={"Start Your Financing Conversation"} href={"/"} />
+<ContactButton label={"Start Your Financing Conversation"} href={"/"} client:load />
 <Header />
 <TopBanner/>
 <VCLTabs/>
 <Footer />
 <FooterMobile/>
 </Layout>
+
+<style>
+    .getintouch-fix{
+        width: 330px!important;
+    }
+</style>
