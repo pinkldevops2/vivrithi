@@ -4,27 +4,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import LogoShape from "../../../public/Vivrithi_logo.svg";
 
 export default function DrivingImpactSwiper({ slides }) {
   const swiperRef = useRef(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(1);
 
   return (
-    <div className="container mx-auto  relative w-full py-4 px-4">
+    <div className="container mx-auto relative w-full py-4 px-4">
       <style>{`
-        .text-description{
-          min-height:50px;
+        .text-description {
+          min-height: 50px;
         }
       `}</style>
-      {/* Header and Counter */}
-      <div className="flex justify-end flex-col md:flex-row absolute bottom-[-45px] left-1/2 -translate-x-1/2 transform  md:relative md:left-[initial] md:translate-x-[initial] md:bottom-[initial]">
-        {/* Navigation */}
+
+      {/* Navigation Buttons */}
+      <div className="flex justify-end flex-col md:flex-row absolute bottom-[-45px] left-1/2 -translate-x-1/2 transform md:relative md:left-[initial] md:translate-x-[initial] md:bottom-[initial]">
         <div className="flex justify-end mb-5 items-center gap-5">
-          <button
-            className="swiper-button-prev-custom"
-            aria-label="Previous Slide"
-          >
+          <button ref={prevRef} aria-label="Previous Slide">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="45"
@@ -38,7 +36,8 @@ export default function DrivingImpactSwiper({ slides }) {
               />
             </svg>
           </button>
-          <button className="swiper-button-next-custom" aria-label="Next Slide">
+
+          <button ref={nextRef} aria-label="Next Slide">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="45"
@@ -55,23 +54,25 @@ export default function DrivingImpactSwiper({ slides }) {
         </div>
       </div>
 
-      {/* Swiper Carousel */}
+      {/* Swiper */}
       <Swiper
         modules={[Navigation, Autoplay]}
         spaceBetween={10}
         slidesPerView={4}
-        centeredSlides={false}
-        loop={true}
+        loop
         autoplay={{
           delay: 2500000,
           disableOnInteraction: false,
         }}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex + 1)}
-        navigation={{
-          nextEl: ".swiper-button-next-custom",
-          prevEl: ".swiper-button-prev-custom",
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
         }}
+        navigation
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSlideChange={(swiper) =>
+          setCurrentSlide(swiper.realIndex + 1)
+        }
         breakpoints={{
           0: { slidesPerView: 1 },
           768: { slidesPerView: 3 },
@@ -81,21 +82,30 @@ export default function DrivingImpactSwiper({ slides }) {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="w-full">
-              <div className="w-full beyond_cap image-flash-container relative h-90 overflow-hidden bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
+              <div className="relative h-90 overflow-hidden bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
                 <img
                   src={slide.img}
                   alt={slide.title}
                   className="absolute inset-0 w-full h-full object-cover object-top bg-[#F0F0F0]"
                 />
 
-                <div className="absolute inset-0 bg-linear-to-t from-[#00000075] to-[#6361ff00]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#00000075] to-transparent" />
 
                 <div className="relative py-5 px-2 text-white flex flex-col justify-end items-center h-full">
-                  <a href={slide.link} target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4"><img src="./icons/linkedin.svg" /></a>
+                  <a
+                    href={slide.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-4 right-4"
+                  >
+                    <img src="./icons/linkedin.svg" alt="LinkedIn" />
+                  </a>
+
                   <p className="text-base font-bold">{slide.title}</p>
-                  <span className="text-center text-base  block mt-[5px] font-light">
-                    {slide.desc}
-                  </span>
+                  <span
+                    className="text-center text-base mt-1 font-light"
+                    dangerouslySetInnerHTML={{ __html: slide.desc }}
+                  />
                 </div>
               </div>
             </div>

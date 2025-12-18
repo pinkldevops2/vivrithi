@@ -16,6 +16,9 @@ body{
   color:#1B1B1B;
   line-height:24px;
 }
+button{
+  cursor: pointer;
+}
 .logoanimation svg{
   width: 250px;
   padding-bottom: 37px;
