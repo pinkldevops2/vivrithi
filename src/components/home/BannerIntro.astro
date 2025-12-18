@@ -14,10 +14,10 @@ import LogoAnimation from "../../components/common/logoglow2.astro";
             <img src="/blo_thumb.png" class="w-full h-auto object-cover" />
           </div>
           <div class="blog_body">
-            <h4>Quick Read</h4>
+            <h4 class="mt-2">Quick Read</h4>
             <span class="small text-sm gradient-text">Report | 5 min read</span>
-            <p class="pt-[10px]">Lorem ipsum dolor sit amet consectetur. Volutpat lacus.</p>
-            <span class="blog_date pt-[10px] text-sm flex gap-2 items-center">
+            <p class="pt-[5px]">Lorem ipsum dolor sit amet consectetur. Volutpat lacus.</p>
+            <span class="blog_date pt-[5px] text-sm flex gap-2 items-center">
               <svg
                 width="12"
                 height="12"
@@ -76,4 +76,7 @@ import LogoAnimation from "../../components/common/logoglow2.astro";
 	  transform: scaleX(-1)!important;
 	  transform-origin: center!important;
 	}
+  .blog_card:hover:after{
+    width: 95%;
+  }
 </style>
