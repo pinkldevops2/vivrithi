@@ -46,6 +46,11 @@ body{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.gradient-text3 {
+  background: linear-gradient(90deg, rgb(248, 248, 248), #3BBAE2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .getintouch-fix {
     position: fixed!important;
     z-index: 2;
