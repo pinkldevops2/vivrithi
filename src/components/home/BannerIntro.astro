@@ -66,13 +66,16 @@ latestNews = latestNews.slice(0, 1);
   return (
     <div data-reveal class="fade-up blog_card flex gap-4" key={post.id}>
       <div class="blog_image w-[120px] shrink-0">
+        <a href={`/news/${post.slug}`}>
         <img
           src={post.featuredImage?.node?.sourceUrl || "/blo_thumb.png"}
           class="w-full  object-cover min-h-[150px]"
           alt={post.title}
         />
+        </a>
       </div>
       <div class="blog_body flex flex-col items-start justify-center">
+        <a href={`/news/${post.slug}`}>
         <h4>Quick Read</h4>
         <span class="small text-sm gradient-text">
           {post.newsCategories?.[0]?.nodes?.[0]?.name || "Report"} | {readTime}
@@ -91,7 +94,9 @@ latestNews = latestNews.slice(0, 1);
           </svg>
           {new Date(post.date).toLocaleDateString("en-US", { weekday: 'long', day: 'numeric', month: 'short' })}
         </span>
+        </a>
       </div>
+      
     </div>
   );
 })}

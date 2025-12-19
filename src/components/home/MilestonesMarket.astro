@@ -71,7 +71,7 @@ from milestones to<br/>market moves
       const readTime = getReadingTime(post.content);
       return (
         <div class="slide" key={post.id}>
-          
+          <a href={`/news/${post.slug}`}>
           <img src={post.featuredImage?.node?.sourceUrl || "/blo_thumb.png"} alt={post.title} />
           <div class="overlay">
             <span class="uppercase text-[18px]">{post.newsCategories?.nodes?.[0]?.name || "Uncategorized"}</span>
@@ -91,6 +91,7 @@ from milestones to<br/>market moves
               {new Date(post.date).toLocaleDateString("en-US", { weekday: 'long', day: 'numeric', month: 'short' })} | {readTime}
             </span>
           </div>
+          </a>
         </div>
       );
     })}
