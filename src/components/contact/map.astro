@@ -1,4 +1,18 @@
-<div class="py-[70px] overflow-hidden">
+---
+import VivritiNext from '../../../public/v_next.png';
+import VamLogo from '../../../public/Group.svg';
+import VivCap from '../../../public/vivriti_capital.png';
+---
+<div class="py-[25px] md:py-[70px] overflow-hidden">
+	<div class="container mx-auto px-4">
+		<div class="tabs-wrapper">
+		<div class="nav-tabs mb-4 p-3">
+		<a href="#" class="tab text-center"><img src={VivritiNext.src} alt="Vivrithi" class="mx-auto"/></a>
+		<a href="#" class="tab text-center active"><img src={VamLogo.src} alt="Vivrithi" class="mx-auto"/></a>
+		<a href="#" class="tab text-center"><img src={VivCap.src} alt="Vivrithi" class="mx-auto"/></a>
+		</div>
+		</div>
+	</div>
         <div class="map_holder">
     	<img src="image 841.png" class="blink-dots" alt="Blinking Dotted Map">
         <div class="address_block_1">
@@ -184,5 +198,52 @@
         0% { opacity: 1; }
         50% { opacity: 0.3; }
         100% { opacity: 1; }
+    }
+
+
+  /* Full width container */
+    .tabs-wrapper {
+      width: 100%;
+    }
+
+    /* Tabs row */
+    .nav-tabs {
+      display: flex;
+      border: 1px dashed #ff6b00;
+    }
+
+    /* Individual tab */
+    .tab {
+      flex: 1; /* Equal width tabs */
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #0b4edb;
+      font-weight: 600;
+      background: #ffffff;
+      border-right: 1px solid #e6e6e6;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .tab:last-child {
+      border-right: none;
+    }
+
+    /* Hover & Active */
+    .tab:hover,
+    .tab.active {
+      background: linear-gradient(90deg, #0b4edb, #1b6cff);
+      color: #ffffff;
+    }
+
+    /* Mobile handling */
+    @media (max-width: 768px) {
+      .nav-tabs {
+        overflow-x: auto;
+      }
+      .tab {
+        min-width: 140px;
+        flex: none;
+      }
     }
 </style>
