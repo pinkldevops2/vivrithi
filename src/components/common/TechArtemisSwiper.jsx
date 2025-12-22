@@ -94,8 +94,8 @@ export default function TechArtemisSwiper({ slides }) {
                 <div className="absolute inset-0 bg-linear-to-t from-[#00000075] to-[#6361ff00]"></div>
 
                 <div className="relative py-5 px-6 md:px-8 text-white flex flex-col justify-end items-start h-full md:p-10">
-                  <p className="text-base font-semibold uppercase">{slide.title}</p>
-                  <span className="text-left text-base  block mt-[5px] font-light min-h-0 md:min-h-20">
+                  <p className="text-base font-semibold uppercase md:min-h-15">{slide.title}</p>
+                  <span className="text-left text-base  block mt-[5px] font-light min-h-0 hidden md:min-h-10">
                     {slide.desc}
                   </span>
                 </div>
