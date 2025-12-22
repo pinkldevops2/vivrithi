@@ -820,3 +820,32 @@ button{
     white-space: normal;
   }
 }
+
+.laptop-frame-wrapper {
+  position: relative;
+  width: 800px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.laptop-frame {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Screen placement inside laptop */
+.laptop-screen {
+  position: absolute;
+  top: 11%;
+  left: 12%;
+  width:76%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.laptop-swiper,
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
