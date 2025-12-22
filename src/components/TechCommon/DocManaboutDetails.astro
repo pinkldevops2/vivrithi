@@ -2,10 +2,11 @@
 import LogoShape from "../../../public/Vivrithi_logo.svg";
 import LogoShape1 from "../../../public/logowhite.svg";
 import LaptopFrameSlider from "@/components/common/LaptopFrameSlider";
+
 const slides = [
-  "/slides/investron/1.png",
-  "/slides/investron/2.png",
-  "/slides/investron/3.png"
+  "/slides/docman/1.png",
+  "/slides/docman/2.png",
+  "/slides/docman/3.png"
 ];
 --- 
  <div class="w-full">
@@ -15,26 +16,24 @@ const slides = [
       class="flex flex-col md:flex-row justify-between items-end md:gap-10 mb-4 md:mb-20"
     >
       <div class="w-full md:w-8/12">
-        <h4 class="uppercase text-[14px] text-[#F58220] mb-4">Investron</h4>
+        <h4 class="uppercase text-[14px] text-[#F58220] mb-4">Document Management System (VDrive)</h4>
          <h2
         class="text-[28px] md:text-[35px] md:text-4xl font-heading leading-[120%] mb-8 gradient-text w-full"
       >
-      Onboard, manage, and grow Alternative Investment Fund (AIF) relationships
+      Efficiency and compliance, built into your document workflow
       </h2>
-       <p data-reveal class="fade-up font-normal mb-3 w-full">
-        Faster onboarding. Fewer errors. Total compliance. Investron brings efficiency and transparency to AIF operations, empowering fund managers and distributors with a fully digital ecosystem.</p><p>
-Seamlessly integrated with Leegality’s e-signature API, Investron enables secure, two-factor signing while automating critical processes like distributor invoicing and brokerage calculations. The result: faster onboarding, greater transparency, and fewer operational bottlenecks for fund managers and distributors alike.
-
+       <p data-reveal class="fade-up font-normal text-[17px] w-full">
+        From faster workflows to full regulatory compliance, VDrive empowers Fintech teams to manage, share, and safeguard critical documents effortlessly. It provides a centralised repository with intelligent access controls, advanced search, and automated workflows, ensuring that every document is accessible, auditable, and secure. By reducing manual effort and streamlining operations, VDrive helps teams focus on what matters — making informed decisions and delivering results efficiently.
       </p>
       </div>
       <div class="w-full hidden md:block md:w-4/12">
         <div class="w-full md:flex justify-end hidden">
           <LaptopFrameSlider
-            laptopImage="laptop_background.png"
-            slides={slides}
-            sliderId="homepage-laptop"
-            client:only="react"
-        />
+          laptopImage="laptop_background.png"
+          slides={slides}
+          sliderId="homepage-laptop"
+          client:only="react"
+      />
         </div> 
     </div>
     </div>

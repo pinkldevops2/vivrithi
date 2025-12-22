@@ -1,38 +1,56 @@
 ---
-import CorporatesSubTabs from "@/components/BorrowVCL/CorporatesSubTabs.astro";
-import FinancialSubTabs from "@/components/BorrowVCL/FinancialSubTabs.astro";
 import CreadIQAbout from "./credIQaboutDetails.astro";
-import ArtemisaboutDetails from "./artemisaboutDetails.astro";
-import MidcorpCrediq from "./midcorporateCrediq.astro";
-import ArtemisKeyFeature from "./artemisKeyFeature.astro";
 import CredIQKeyFeature from "./credIQKeyFeature.astro";
-import ArtemisValueDelivered from "./artemisValueDelivered.astro"
-import CreadIQValueDelivered from "./credIQValueDelivered.astro"
-import ArtemisSlider from './artemisSlider.astro';
+import CreadIQValueDelivered from "./credIQValueDelivered.astro";
 import CredIQSlider from './credIQSlider.astro';
 import Techtabsslider from "@/components/common/TechTabsSwiper";
 
+import AccreditAbout from "./AccreditaboutDetails.astro";
+import AccreditKeyFeature from "./AccreditKeyFeature.astro";
+import AccreditValueDelivered from "./AccreditValueDelivered.astro";
+import AccreditSlider from './AccreditSlider.astro';
+
+import FundAbout from "./FundaboutDetails.astro";
+import FundKeyFeature from "./FundKeyFeature.astro";
+import FundValueDelivered from "./FundValueDelivered.astro";
+import FundSlider from './FundSlider.astro';
+
+import DistributorAbout from "./DistributoraboutDetails.astro";
+import DistributorKeyFeature from "./DistributorKeyFeature.astro";
+import DistributorValueDelivered from "./DistributorValueDelivered.astro";
+import DistributorSlider from './DistributorSlider.astro';
+
+import InvestorAbout from "./InvestoraboutDetails.astro";
+import InvestorKeyFeature from "./InvestorKeyFeature.astro";
+import InvestorValueDelivered from "./InvestorValueDelivered.astro";
+import InvestorSlider from './InvestorSlider.astro';
+
 const slides1 = [
   {
-    id: "corporates",
+    id: "investron",
     num: "01",
-    title: "Credit Teams",
+    title: "Investron",
   },
   {
-    id: "financial",
+    id: "accreditation",
     num: "02",
-    title: "Risk Teams",
+    title: "Accreditation",
   },
  {
     id: "fund",
     num: "03",
-    title: "Business Teams",
+    title: "Fund",
   },
   {
     id: "distributorPortal",
     num: "04",
-    title: "Credit Teams",
+    title: "Distributor Portal",
   },
+  {
+    id: "investorportal",
+    num: "05",
+    title: "Investor Portal",
+  }
  
 
 ];
@@ -43,47 +61,15 @@ const slides1 = [
 
 
   <div class="container mx-auto px-4 lg:px-8 xl:px-4">
-     <section class="py-10 md:pb-0">
+     <section class="pt-5 pb-10 md:pb-0">
           <div>
             <Techtabsslider slides={slides1} client:only="react" />
           </div>
         </section>
     <div class="flex justify-start">
       <div
-        class="flex space-x-2 w-full md:max-w-fit relative items-start z-2  mb-4 md:mb-0 min-h-[140px]"
+        class="flex space-x-2 w-full md:max-w-fit relative items-start z-2  mb-4 md:mb-0 min-h-[30px]"
       >
-       <!--  <button
-          class="borrowvcl-btn px-8 border-1 border-dashed border-[#F58220] font-normal transition-colors duration-300 w-1/2 md:min-w-[350px] text-left"
-          data-tab="corporates"
-          aria-selected="true"
-        >
-        <h4 class="text-[28px] md:text-[35px] font-normal mb-3 font-heading">01.</h4>
-          <p class="text-[16px] md:text-[18px] font-normal uppercase">CredIQ</p>
-        </button>
-        <button
-          class="borrowvcl-btn px-8 md:px-12 border-1 border-dashed border-[#F58220] transition-colors duration-300 w-1/2 md:min-w-[350px] text-left"
-          data-tab="financial"
-          aria-selected="false"
-        >
-         <h4 class="text-[28px] md:text-[35px] font-normal mb-3 font-heading">02.</h4>
-          <p class="text-[16px] md:text-[18px] font-normal uppercase">Artemis</p>
-        </button>
-         <button
-          class="borrowvcl-btn px-8 md:px-12 border-1 border-dashed border-[#F58220] transition-colors duration-300 w-1/2 md:min-w-[350px] text-left"
-          data-tab="fund"
-          aria-selected="false"
-        >
-         <h4 class="text-[28px] md:text-[35px] font-normal mb-3 font-heading">03.</h4>
-          <p class="text-[16px] md:text-[18px] font-normal uppercase">Fund</p>
-        </button>
-        <button
-          class="borrowvcl-btn px-8 md:px-12 border-1 border-dashed border-[#F58220] transition-colors duration-300 w-1/2 md:min-w-[350px] text-left"
-          data-tab="distributorPortal"
-          aria-selected="false"
-        >
-         <h4 class="text-[28px] md:text-[35px] font-normal mb-3 font-heading">04.</h4>
-          <p class="text-[16px] md:text-[18px] font-normal uppercase">Distributor Portal</p>
-        </button> -->
       </div>
     </div>
   </div>
@@ -92,21 +78,27 @@ const slides1 = [
   <div class="relative mt-0">
     <!-- First tab visible -->
     <div
-      id="corporates"
+      id="investron"
       class="borrowvcl-panel inset-0 transition-all duration-500 ease-out transform opacity-100 translate-y-0"
     >
       <section class="md:pt-6">
-       <h1>1</h1>
+       <CreadIQAbout />
+       <CredIQSlider />
+       <CredIQKeyFeature />
+       <CreadIQValueDelivered />
       </section>
     </div>
 
     <!-- Second tab hidden by default -->
     <div
-      id="financial"
+      id="accreditation"
       class="borrowvcl-panel inset-0 transition-all duration-500 ease-out transform opacity-0 -translate-y-2 hidden"
     >
       <section class="pb-0 md:pt-6">
-        <h1>2</h1>
+        <AccreditAbout />
+       <AccreditSlider />
+       <AccreditKeyFeature />
+       <AccreditValueDelivered />
       </section>
     </div>
 
@@ -116,7 +108,10 @@ const slides1 = [
       class="borrowvcl-panel inset-0 transition-all duration-500 ease-out transform opacity-0 -translate-y-2 hidden"
     >
       <section class="pb-0 md:pt-6">
-        <h1>3</h1>
+       <FundAbout />
+       <FundSlider />
+       <FundKeyFeature />
+       <FundValueDelivered />
       </section>
     </div>
 
@@ -126,7 +121,22 @@ const slides1 = [
       class="borrowvcl-panel inset-0 transition-all duration-500 ease-out transform opacity-0 -translate-y-2 hidden"
     >
       <section class="pb-0 md:pt-6">
-        <h1>4</h1>
+       <DistributorAbout />
+       <DistributorSlider />
+       <DistributorKeyFeature />
+       <DistributorValueDelivered />
+      </section>
+    </div>
+
+    <div
+      id="investorportal"
+      class="borrowvcl-panel inset-0 transition-all duration-500 ease-out transform opacity-0 -translate-y-2 hidden"
+    >
+      <section class="pb-0 md:pt-6">
+       <InvestorAbout />
+       <InvestorSlider />
+       <InvestorKeyFeature />
+       <InvestorValueDelivered />
       </section>
     </div>
 
