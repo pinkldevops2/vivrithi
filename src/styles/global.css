@@ -857,3 +857,8 @@ button.techtabs-btn:not(.tabactive) {
     padding-bottom: 10px!important;
     min-height: 117px!important;
 }
+
+.valuecard h3{
+    font-size: 17px;
+    font-weight: 700;
+}
