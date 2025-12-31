@@ -417,12 +417,12 @@ function renderPagination() {
     }`;
 
     const [resPosts, resCat] = await Promise.all([
-      fetch("https://web.pinklemonadedigital.com/vivriti/graphql/", {
+      fetch("https://vivritinextdev.wpenginepowered.com/graphql/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: postQuery }),
       }),
-      fetch("https://web.pinklemonadedigital.com/vivriti/graphql/", {
+      fetch("https://vivritinextdev.wpenginepowered.com/graphql/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: postCategoryQuery }),

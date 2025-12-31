@@ -226,8 +226,11 @@ function renderPage(page) {
       const imageUrl = item.featuredImage?.node?.sourceUrl || "/b1.png";
       const date = formatDate(item.date);
        const readTime = getReadingTime(item.content);
+       const hasCustomLink = !!item.news?.link;
+      const newsUrl = hasCustomLink ? item.news.link : `/news/${item.slug}`;
+
       let a =  `
-      <a href="/news/${item.slug}">  <div class="blog-card border-b border-dotted pb-4 sm:pb-4 pr-4 sm:border-r last:border-b-0 last:sm:border-r-0">
+      <a href="${newsUrl}" ${hasCustomLink ? 'target="_blank" rel="noopener noreferrer"' : ''}">  <div class="blog-card border-b border-dotted pb-4 sm:pb-4 pr-4 sm:border-r last:border-b-0 last:sm:border-r-0">
           <div class="blog_card vartical-blog flex flex-col gap-4 overflow-hidden">
             <div class="blog_image w-full shrink-0 beyond_cap image-flash-container">
               <img src="${imageUrl}" class="w-full h-auto aspect-80/57 object-cover" />
@@ -369,6 +372,9 @@ function renderPagination() {
       slug
       content
       date
+        news {
+        link
+            }
       featuredImage { node { sourceUrl } }
       newsCategories { nodes { id name slug } }
     }
@@ -380,12 +386,12 @@ function renderPagination() {
       }`;
 
       const [resNews, resCat] = await Promise.all([
-        fetch("https://web.pinklemonadedigital.com/vivriti/graphql/", {
+        fetch("https://vivritinextdev.wpenginepowered.com/graphql/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ query: newsQuery }),
         }),
-        fetch("https://web.pinklemonadedigital.com/vivriti/graphql/", {
+        fetch("https://vivritinextdev.wpenginepowered.com/graphql/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ query: categoryQuery }),
