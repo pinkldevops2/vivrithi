@@ -75,7 +75,7 @@ latestNews = latestNews.slice(0, 1);
      <div class="md:w-2/3 blog_banner order-2 md:order-1">
  {latestNews.map((post) => {
   const readTime = getReadingTime(post.content);
-const hasCustomLink = !!post.news?.link;
+      const hasCustomLink = !!post.news?.link;
       const newsUrl = hasCustomLink ? post.news.link : `/news/${post.slug}`;
   return (
     <div data-reveal class="fade-up blog_card flex gap-4" key={post.id}>
@@ -93,7 +93,11 @@ const hasCustomLink = !!post.news?.link;
         </a>
       </div>
       <div class="blog_body flex flex-col items-start justify-center pr-6">
-        <a href={`/news/${post.slug}`}>
+        <a
+        href={newsUrl}
+        target={hasCustomLink ? "_blank" : undefined}
+        rel={hasCustomLink ? "noopener noreferrer" : undefined}
+      >
         <h4>Quick Read</h4>
         <span class="small text-sm gradient-text">
           {post.newsCategories?.[0]?.nodes?.[0]?.name || "Report"} | {readTime}

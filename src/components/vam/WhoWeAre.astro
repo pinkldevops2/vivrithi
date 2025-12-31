@@ -12,6 +12,9 @@ const newsQuery = `{
       slug
       content
       date
+        news {
+        link
+            }
       featuredImage { node { sourceUrl } }
       newsCategories { nodes { id name slug } }
     }
