@@ -27,7 +27,12 @@ try {
     body: JSON.stringify({ query: newsQuery }),
   });
   const data = await res.json();
-  latestNews = data.data.news.nodes;
+  latestNews = data.data.news.nodes.filter(item =>
+      item.newsCategories?.nodes?.some(
+        cat => cat.slug === "media-release"
+      )
+    )
+   ;
 } catch (err) {
   console.error("Failed to fetch news:", err);
 }

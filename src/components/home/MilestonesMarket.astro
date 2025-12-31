@@ -7,21 +7,32 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
 import { GRAPHQL } from "../../config/graphql.js";
 
 const newsQuery = `{
-  news(first: 4) {
+news(first: 7) {
     nodes {
       id
       title
       slug
       content
       date
-       news {
+      news {
         link
-            }
-      featuredImage { node { sourceUrl } }
-      newsCategories { nodes { id name slug } }
+      }
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      newsCategories {
+        nodes {
+          id
+          name
+          slug
+        }
+      }
     }
   }
 }`;
+
 
 let latestNews = [];
 
@@ -32,12 +43,20 @@ try {
     body: JSON.stringify({ query: newsQuery }),
   });
   const data = await res.json();
-  latestNews = data.data.news.nodes;
+ // latestNews = data.data.news.nodes;
+  latestNews = data.data.news.nodes
+    .filter(item =>
+      item.newsCategories?.nodes?.some(
+        cat => cat.slug === "media-release"
+      )
+    )
+   
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 } catch (err) {
   console.error("Failed to fetch news:", err);
 }
 
-latestNews.sort((a, b) => new Date(b.date) - new Date(a.date));
+//latestNews.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 function getReadingTime(htmlContent) {
   if (!htmlContent) return "1 min read";
@@ -65,7 +84,6 @@ from milestones to<br/>market moves
     </div>
     <div class="w-full flex md:w-1/2 ">
    
-
 
  
 <div class="slider-container milestones">
