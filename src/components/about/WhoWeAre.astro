@@ -12,6 +12,9 @@ const newsQuery = `{
       slug
       content
       date
+        news {
+        link
+            }
       featuredImage { node { sourceUrl } }
       newsCategories { nodes { id name slug } }
     }
@@ -42,7 +45,18 @@ try {
 
 
 latestNews = latestNews.slice(0, 1); 
+
+const hasCustomLink = Boolean(post.news?.link?.trim());
+const newsUrl = hasCustomLink ? post.news.link : `/news/${post.slug}`;
 ---
+<a
+  href={newsUrl}
+  target={hasCustomLink ? "_blank" : null}
+  rel={hasCustomLink ? "noopener noreferrer" : null}
+  class="block fade-up blog_card"
+>
+  {post.title}
+</a>
 <div class="bg-white w-full md:pt-[70px]">
 <div class="container mx-auto">
   <div class="flex flex-wrap xl:pr-[10px] xl:pl-[15px]">
@@ -57,7 +71,12 @@ latestNews = latestNews.slice(0, 1);
         </h2>
     
         <div class="md:w-2/3 blog_banner order-2 md:order-1">
-        {latestNews.map(post => <BlogCard post={post} />)}
+       <!-- {latestNews.map(post => <BlogCard post={post} />)}-->
+  {latestNews.map(post => (
+    <BlogCard post={post} />
+  ))}
+
+
         </div>
 
        </div>
