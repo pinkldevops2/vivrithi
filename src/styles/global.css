@@ -880,3 +880,6 @@ button.techtabs-btn:not(.tabactive) {
     font-size: 14px;
     padding: 5px 35px;
 }
+.list_of_files{
+	max-width:70%;
+}
