@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+          "value": "default-src 'self'; script-src 'self' https://vivritinextdev.wpenginepowered.com; style-src 'self' https://vivritinextdev.wpenginepowered.com 'unsafe-inline'; img-src 'self' data: https://vivritinextdev.wpenginepowered.com; font-src 'self' https://vivritinextdev.wpenginepowered.com; connect-src 'self' https://vivritinextdev.wpenginepowered.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
         }
       ]
     }
