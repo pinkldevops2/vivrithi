@@ -3,7 +3,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import LogoShape from "../../../public/Vivrithi_logo.svg";
-
+const { nonce } = Astro.locals;
 import { GRAPHQL } from "../../config/graphql.js";
 
 const newsQuery = `{
@@ -132,10 +132,7 @@ from milestones to<br/>market moves
   </div>
 </div>
 </div>
-<style>
-
-</style>
-<script>
+<script nonce={nonce}>
   import $ from "jquery";
   import "slick-carousel";
 
