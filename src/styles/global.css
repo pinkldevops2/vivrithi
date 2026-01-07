@@ -871,15 +871,22 @@ button{
 }
 
 /* Screen placement inside laptop */
-.laptop-screen {
+/* .laptop-screen {
   position: absolute;
   top: 11%;
   left: 12%;
   width:76%;
   height: 70%;
   overflow: hidden;
+} */
+.laptop-screen {
+    width: 76.8%;
+    height: 75%;
+    position: absolute;
+    top: 7.2%;
+    left: 11.5%;
+    overflow: hidden;
 }
-
 .laptop-swiper,
 .slide-image {
   width: 100%;
