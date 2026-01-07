@@ -907,3 +907,9 @@ button.techtabs-btn:not(.tabactive) {
 .blog_details p{
   margin-bottom: 17px;
 }
+.laptop-screen .swiper-slide img{
+width:395px;
+height:248px;
+object-fit:cover;
+}
+ 
