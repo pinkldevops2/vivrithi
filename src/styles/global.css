@@ -62,6 +62,9 @@ button{
     padding: 10px 20px;
     transform-origin: right bottom;
 }   
+.sectionheading_md{
+  font-size: 33px;
+}
 .milestones .slick-dots {
     display: flex!important;
     width: 100%!important;
