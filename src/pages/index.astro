@@ -20,6 +20,57 @@ import FooterMobile from "../components/common/FooterMobile.astro";
 import CapitalSlider from "../components/common/CapitalSlider";
 import ThinkTankSlider from "../components/common/ThinkTankSlider";
 import LogoShape from "../../public/Vivrithi_logo.svg";
+import { GRAPHQL } from "../config/graphql.js";
+
+/* -------------------- GRAPHQL QUERY -------------------- */
+
+const blogQuery = `
+{
+  posts(first: 4) {
+    nodes {
+      id
+      title
+      slug
+      date
+      blog {
+        description
+        uploadPdf {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      categories {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+let blogPosts = [];
+
+try {
+  const res = await fetch(GRAPHQL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: blogQuery }),
+  });
+
+  const data = await res.json();
+  blogPosts = data?.data?.posts?.nodes || [];
+} catch (error) {
+  console.error("GraphQL Fetch Error:", error);
+}
 
 const slides = [
   { img: "/images/slide1.jpg", title: "Accessing growth capital is just one hurdle for India’s mid-market enterprises.",cname:"John Doe",designation:"CTO, Ailitic",location:"Bangalore, India" },
@@ -81,17 +132,21 @@ const slides2 = [
 		</div>
 	</section>  -->
 	<Insights />
-	<section class="sm:hidden block">
-	<ThinkTankSlider slides={slides2} client:only="react"/>
-	<div class="px-3 pb-2 bg-[#3bbae212]">
-	<a
-          href="/contact"
-          class="contact_cta px-[30px] text-center py-[10px] text-[14px] flex items-center justify-center gap-2 text-white uppercase hover:text-blue-600 transition mb-2"
-          ><span data-text="View more"> View more</span>
-          <img src={LogoShape.src} class="w-5 h-5" />
-        </a>
-	</div>
-</section>
+<!-- Mobile Blog Slider -->
+  <section class="sm:hidden block">
+    <ThinkTankSlider posts={blogPosts} client:only="react" />
+
+    <div class="px-3 pb-2 bg-[#3bbae212]">
+      <a
+        href="/contact"
+        class="contact_cta px-[30px] text-center py-[10px] text-[14px] flex items-center justify-center gap-2 text-white uppercase transition mb-2"
+      >
+        <span>View more</span>
+        <img src={LogoShape.src} class="w-5 h-5" />
+      </a>
+    </div>
+  </section>
+
 	<!--  <Testimonials />  -->
 	<TestimonialsLeader/>
 	<MilestonesMarket/>
