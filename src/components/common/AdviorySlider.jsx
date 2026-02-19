@@ -141,7 +141,7 @@ export default function AdvisorySwiper({ slides }) {
                 <h2 className="text-[28px] md:text-[35px] font-heading leading-[120%] mb-8 gradient-text">{slide.title}</h2>
                 <div className="flex flex-col md:flex-row justify-between md:gap-8 mb-4 md:mb-10">
                   {slide.paragraphs.map((para, pIndex) => (
-                    <p key={pIndex} className="font-normal text-[17px] w-full md:w-6/12 text-[#1B1B1B]">{para}</p>
+                    <div key={`${slide.id}-${pIndex}`} className="font-normal text-[17px] w-full md:w-6/12 text-[#1B1B1B]" dangerouslySetInnerHTML={{ __html: para }} />
                   ))}
                 </div>
               </div>
